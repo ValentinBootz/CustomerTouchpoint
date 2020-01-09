@@ -15,7 +15,7 @@ body {
 }
 
 .landingBackground {
-    background-image: url('/static/background.png');
+    background-image: url('/static/images/background.png');
     background-size: cover;
     z-index: 1;
 }
@@ -236,11 +236,11 @@ body {
 }
 
 .rotateButtonNext {
-    background-image: url('/static/next.svg');
+    background-image: url('/static/images/next.svg');
 }
 
 .rotateButtonPrev {
-    background-image: url('/static/prev.svg');
+    background-image: url('/static/images/prev.svg');
 }
 
 .rotateButtonNext:hover, .rotateButtonPrev:hover {
@@ -248,11 +248,11 @@ body {
 }
 
 .rotateButtonNext:hover {
-    background-image: url('/static/next_hover.svg');
+    background-image: url('/static/images/next_hover.svg');
 }
 
 .rotateButtonPrev:hover {
-    background-image: url('/static/prev_hover.svg');
+    background-image: url('/static/images/prev_hover.svg');
 }
 
 /*# sourceMappingURL=styles.chunk.css.map*/
