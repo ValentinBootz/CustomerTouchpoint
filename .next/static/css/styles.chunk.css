@@ -1,0 +1,258 @@
+body {
+    margin: 0px;
+}
+
+.landingContainer {
+    position: relative;
+}
+
+.landingBackground, .landingOverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.landingBackground {
+    background-image: url('/static/background.png');
+    background-size: cover;
+    z-index: 1;
+}
+
+.landingOverlay {
+    background-color: black;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.landingContent {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.landingButton {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    transition-duration: 0.4s;
+}
+
+.landingButton:hover {
+    background-color: lightgray;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+.customerContainer {
+    position: relative;
+}
+
+.customerBackground0, .customerBackground1, .customerBackground2, .customerBackground3, .customerBackground4, .customerBackground5, .customerBackground6, .customerBackground7, .customerBackground8, .customerBackground9, .customerBackground10, .customerBackground11, .customerBackground12, .customerBackground13, .customerBackground14, .customerBackground15, .customerBackground16, .customerBackground17, .customerBackground18, .customerBackground19, .customerBackground20, .customerBackground21, .customerBackground22, .customerBackground23, .customerBackground24, .customerBackground25, .customerBackground26, .customerBackground27, .customerBackground28, .customerBackground29, .customerBackground30, .customerBackground31, .customerBackground32, .customerBackground33, .customerBackground34, .customerBackground35 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    z-index: 1;
+}
+
+.customerBackground0 {
+    background-image: url('/static/images/bmw/bmw0.png');
+}
+
+.customerBackground1 {
+    background-image: url('/static/images/bmw/bmw1.png');
+}
+
+.customerBackground2 {
+    background-image: url('/static/images/bmw/bmw2.png');
+}
+
+.customerBackground3 {
+    background-image: url('/static/images/bmw/bmw3.png');
+}
+
+.customerBackground4 {
+    background-image: url('/static/images/bmw/bmw4.png');
+}
+
+.customerBackground5 {
+    background-image: url('/static/images/bmw/bmw5.png');
+}
+
+.customerBackground6 {
+    background-image: url('/static/images/bmw/bmw6.png');
+}
+
+.customerBackground7 {
+    background-image: url('/static/images/bmw/bmw7.png');
+}
+
+.customerBackground8 {
+    background-image: url('/static/images/bmw/bmw8.png');
+}
+
+.customerBackground9 {
+    background-image: url('/static/images/bmw/bmw9.png');
+}
+
+.customerBackground10 {
+    background-image: url('/static/images/bmw/bmw10.png');
+}
+
+.customerBackground11 {
+    background-image: url('/static/images/bmw/bmw11.png');
+}
+
+.customerBackground12 {
+    background-image: url('/static/images/bmw/bmw12.png');
+}
+
+.customerBackground13 {
+    background-image: url('/static/images/bmw/bmw13.png');
+}
+
+.customerBackground14 {
+    background-image: url('/static/images/bmw/bmw14.png');
+}
+
+.customerBackground15 {
+    background-image: url('/static/images/bmw/bmw15.png');
+}
+
+.customerBackground16 {
+    background-image: url('/static/images/bmw/bmw16.png');
+}
+
+.customerBackground17 {
+    background-image: url('/static/images/bmw/bmw17.png');
+}
+
+.customerBackground18 {
+    background-image: url('/static/images/bmw/bmw18.png');
+}
+
+.customerBackground19 {
+    background-image: url('/static/images/bmw/bmw19.png');
+}
+
+.customerBackground20 {
+    background-image: url('/static/images/bmw/bmw20.png');
+}
+
+.customerBackground21 {
+    background-image: url('/static/images/bmw/bmw21.png');
+}
+
+.customerBackground22 {
+    background-image: url('/static/images/bmw/bmw22.png');
+}
+
+.customerBackground23 {
+    background-image: url('/static/images/bmw/bmw23.png');
+}
+
+.customerBackground24 {
+    background-image: url('/static/images/bmw/bmw24.png');
+}
+
+.customerBackground25 {
+    background-image: url('/static/images/bmw/bmw25.png');
+}
+
+.customerBackground26 {
+    background-image: url('/static/images/bmw/bmw26.png');
+}
+
+.customerBackground27 {
+    background-image: url('/static/images/bmw/bmw27.png');
+}
+
+.customerBackground28 {
+    background-image: url('/static/images/bmw/bmw28.png');
+}
+
+.customerBackground29 {
+    background-image: url('/static/images/bmw/bmw29.png');
+}
+
+.customerBackground30 {
+    background-image: url('/static/images/bmw/bmw30.png');
+}
+
+.customerBackground31 {
+    background-image: url('/static/images/bmw/bmw31.png');
+}
+
+.customerBackground32 {
+    background-image: url('/static/images/bmw/bmw32.png');
+}
+
+.customerBackground33 {
+    background-image: url('/static/images/bmw/bmw33.png');
+}
+
+.customerBackground34 {
+    background-image: url('/static/images/bmw/bmw34.png');
+}
+
+.customerBackground35 {
+    background-image: url('/static/images/bmw/bmw35.png');
+}
+
+.customerContent {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.rotateButtonNext, .rotateButtonPrev {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 140px;
+    border-radius: 4px;
+    margin: 30px;
+    transition-duration: 0.4s;
+}
+
+.rotateButtonNext {
+    background-image: url('/static/next.svg');
+}
+
+.rotateButtonPrev {
+    background-image: url('/static/prev.svg');
+}
+
+.rotateButtonNext:hover, .rotateButtonPrev:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.rotateButtonNext:hover {
+    background-image: url('/static/next_hover.svg');
+}
+
+.rotateButtonPrev:hover {
+    background-image: url('/static/prev_hover.svg');
+}
+
+/*# sourceMappingURL=styles.chunk.css.map*/
