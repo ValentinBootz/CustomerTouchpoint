@@ -2174,12 +2174,16 @@ function (_React$Component) {
     _this.handleNext = _this.handleNext.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.handlePrev = _this.handlePrev.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.state = {
-      view: 33,
-      nextPressed: false
+      view: 1
     };
     _this.max = 35;
     return _this;
-  }
+  } // componentDidMount() {
+  //     do {
+  //         this.handleNext()
+  //     } while(this.state.view != 0) 
+  // }
+
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CustomerPage, [{
     key: "handleNext",
@@ -2214,21 +2218,28 @@ function (_React$Component) {
         className: "customerContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 49
         },
         __self: this
       }, __jsx("div", {
         className: 'customerBackground' + this.state.view,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 50
         },
         __self: this
       }), __jsx("div", {
         className: "customerContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 51
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "buttonContainer",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
         },
         __self: this
       }, __jsx("button", {
@@ -2236,7 +2247,7 @@ function (_React$Component) {
         onClick: this.handlePrev,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 53
         },
         __self: this
       }), __jsx("button", {
@@ -2244,10 +2255,52 @@ function (_React$Component) {
         onClick: this.handleNext,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 54
         },
         __self: this
-      })));
+      })), __jsx("div", {
+        className: "menuContainer",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, __jsx("button", {
+        className: "menuButton",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }), __jsx("div", {
+        className: "dropdownContent",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, __jsx("button", {
+        className: "customerButton",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }), __jsx("button", {
+        className: "serviceButton",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }), __jsx("button", {
+        className: "dealerButton",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61
+        },
+        __self: this
+      })))));
     }
   }]);
 

@@ -7,12 +7,17 @@ class CustomerPage extends React.Component {
         this.handlePrev = this.handlePrev.bind(this)
 
         this.state = {
-            view: 33,
-            nextPressed: false
+            view: 1
         }
 
         this.max = 35
     }
+
+    // componentDidMount() {
+    //     do {
+    //         this.handleNext()
+    //     } while(this.state.view != 0) 
+    // }
 
     handleNext() {
         if (this.state.view == this.max) {
@@ -39,12 +44,23 @@ class CustomerPage extends React.Component {
     }
 
     render() {
+
         return (
-            <div className="customerContainer">
+            <div className='customerContainer'>
                 <div className={'customerBackground' + this.state.view} />
-                <div className="customerContent">
-                    <button className="rotateButtonPrev" onClick={this.handlePrev} />
-                    <button className="rotateButtonNext" onClick={this.handleNext} />
+                <div className='customerContent'>
+                    <div className='buttonContainer'>
+                        <button className="rotateButtonPrev" onClick={this.handlePrev} />
+                        <button className="rotateButtonNext" onClick={this.handleNext} />
+                    </div>
+                    <div className='menuContainer'>
+                        <button className='menuButton' />
+                        <div className='dropdownContent'>
+                            <button className='customerButton' />
+                            <button className='serviceButton' />
+                            <button className='dealerButton' />
+                        </div>
+                    </div>
                 </div>
             </div>
         );

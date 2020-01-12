@@ -114,11 +114,15 @@ class CustomerPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
     this.handleNext = this.handleNext.bind(this);
     this.handlePrev = this.handlePrev.bind(this);
     this.state = {
-      view: 33,
-      nextPressed: false
+      view: 1
     };
     this.max = 35;
-  }
+  } // componentDidMount() {
+  //     do {
+  //         this.handleNext()
+  //     } while(this.state.view != 0) 
+  // }
+
 
   handleNext() {
     if (this.state.view == this.max) {
@@ -149,21 +153,28 @@ class CustomerPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       className: "customerContainer",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 49
       },
       __self: this
     }, __jsx("div", {
       className: 'customerBackground' + this.state.view,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 50
       },
       __self: this
     }), __jsx("div", {
       className: "customerContent",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 51
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "buttonContainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
       },
       __self: this
     }, __jsx("button", {
@@ -171,7 +182,7 @@ class CustomerPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       onClick: this.handlePrev,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 53
       },
       __self: this
     }), __jsx("button", {
@@ -179,10 +190,52 @@ class CustomerPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       onClick: this.handleNext,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 54
       },
       __self: this
-    })));
+    })), __jsx("div", {
+      className: "menuContainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: this
+    }, __jsx("button", {
+      className: "menuButton",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "dropdownContent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, __jsx("button", {
+      className: "customerButton",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }), __jsx("button", {
+      className: "serviceButton",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }), __jsx("button", {
+      className: "dealerButton",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    })))));
   }
 
 }
