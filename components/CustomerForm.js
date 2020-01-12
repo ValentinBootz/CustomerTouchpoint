@@ -1,17 +1,14 @@
-class CustomerForm extends React.Component {
+class MenuView extends React.Component {
     render() {
 
         return (
-            <div className='menuContainer'>
-                <div className='menuOverlay' />
-                <div className='menuContent'>
-                    <p>
-                        Customer
-                    </p>
-                </div>
-            </div>
+            <form>
+                <p>
+                    Customer Form
+                </p>
+            </form>
         );
     }
 }
 
-export default CustomerForm;
+export default MenuView;

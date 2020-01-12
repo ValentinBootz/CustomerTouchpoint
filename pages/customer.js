@@ -1,3 +1,5 @@
+import CustomerForm from '../components/CustomerForm'
+
 class CustomerPage extends React.Component {
 
     constructor() {
@@ -9,7 +11,8 @@ class CustomerPage extends React.Component {
 
         this.state = {
             view: 0,
-            menu: 'hidden'
+            showMenuView: false,
+            showCustomerForm: false,
         }
 
         this.max = 35
@@ -41,7 +44,15 @@ class CustomerPage extends React.Component {
 
     openCustomerMenu() {
         this.setState({
-            menu: 'visible'
+            showMenuView: true,
+            showCustomerForm: true
+        })
+    }
+
+    closeMenuView() {
+        this.setState({
+            showMenuView: false,
+            showCustomerForm: false
         })
     }
 
@@ -63,13 +74,13 @@ class CustomerPage extends React.Component {
                             <button className='dealerButton' onClick={this.openDealerMenu} />
                         </div>
                     </div>
-                    <div className={this.state.menu + 'Menu'}>
-                        <div className='menuOverlay'/>
-                        <div className='menuContent'>
-
+                    {this.state.showMenuView ? <div className='menuViewContainer'>
+                        <div className='menuViewOverlay' />
+                        <button className='closeButton' onClick={this.closeMenuView} />
+                        <div className='menuViewContent' >
+                            {this.state.showCustomerForm ? <CustomerForm/> : null}
                         </div>
-
-                    </div>
+                    </div > : null}
                 </div>
             </div>
         );

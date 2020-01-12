@@ -1,5 +1,67 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/customer.js"],{
 
+/***/ "./components/CustomerForm.js":
+/*!************************************!*\
+  !*** ./components/CustomerForm.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/components/CustomerForm.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+var MenuView =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(MenuView, _React$Component);
+
+  function MenuView() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, MenuView);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(MenuView).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(MenuView, [{
+    key: "render",
+    value: function render() {
+      return __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5
+        },
+        __self: this
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        },
+        __self: this
+      }, "Customer Form"));
+    }
+  }]);
+
+  return MenuView;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuView);
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
@@ -2150,6 +2212,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_CustomerForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/CustomerForm */ "./components/CustomerForm.js");
 
 
 
@@ -2159,6 +2222,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/pages/customer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
 
 var CustomerPage =
 /*#__PURE__*/
@@ -2176,7 +2240,8 @@ function (_React$Component) {
     _this.openCustomerMenu = _this.openCustomerMenu.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.state = {
       view: 0,
-      menu: 'hidden'
+      showMenuView: false,
+      showCustomerForm: false
     };
     _this.max = 35;
     return _this;
@@ -2212,7 +2277,16 @@ function (_React$Component) {
     key: "openCustomerMenu",
     value: function openCustomerMenu() {
       this.setState({
-        menu: 'visible'
+        showMenuView: true,
+        showCustomerForm: true
+      });
+    }
+  }, {
+    key: "closeMenuView",
+    value: function closeMenuView() {
+      this.setState({
+        showMenuView: false,
+        showCustomerForm: false
       });
     }
   }, {
@@ -2222,28 +2296,28 @@ function (_React$Component) {
         className: "customerContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 62
         },
         __self: this
       }, __jsx("div", {
         className: 'customerBackground' + this.state.view,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 63
         },
         __self: this
       }), __jsx("div", {
         className: "customerContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 64
         },
         __self: this
       }, __jsx("div", {
         className: "buttonContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 65
         },
         __self: this
       }, __jsx("button", {
@@ -2251,7 +2325,7 @@ function (_React$Component) {
         onClick: this.handlePrev,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 66
         },
         __self: this
       }), __jsx("button", {
@@ -2259,28 +2333,28 @@ function (_React$Component) {
         onClick: this.handleNext,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 67
         },
         __self: this
       })), __jsx("div", {
         className: "menuContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 69
         },
         __self: this
       }, __jsx("button", {
         className: "menuButton",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 70
         },
         __self: this
       }), __jsx("div", {
         className: "dropdownContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 71
         },
         __self: this
       }, __jsx("button", {
@@ -2288,7 +2362,7 @@ function (_React$Component) {
         onClick: this.openCustomerMenu,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 72
         },
         __self: this
       }), __jsx("button", {
@@ -2296,7 +2370,7 @@ function (_React$Component) {
         onClick: this.openServiceMenu,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 73
         },
         __self: this
       }), __jsx("button", {
@@ -2304,31 +2378,45 @@ function (_React$Component) {
         onClick: this.openDealerMenu,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 74
         },
         __self: this
-      }))), __jsx("div", {
-        className: this.state.menu + 'Menu',
+      }))), this.state.showMenuView ? __jsx("div", {
+        className: "menuViewContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 77
         },
         __self: this
       }, __jsx("div", {
-        className: "menuOverlay",
+        className: "menuViewOverlay",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 78
+        },
+        __self: this
+      }), __jsx("button", {
+        className: "closeButton",
+        onClick: this.closeMenuView,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
         },
         __self: this
       }), __jsx("div", {
-        className: "menuContent",
+        className: "menuViewContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 80
         },
         __self: this
-      }))));
+      }, this.state.showCustomerForm ? __jsx(_components_CustomerForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81
+        },
+        __self: this
+      }) : null)) : null));
     }
   }]);
 

@@ -325,7 +325,7 @@ body {
     background-image: url('/static/images/navigate/prev_hover.svg');
 }
 
-.hiddenMenu, .visibleMenu, .menuOverlay {
+.hiddenMenuView, .menuViewContainer, .menuViewOverlay {
     position: absolute;
     left: 0;
     top: 0;
@@ -335,20 +335,16 @@ body {
     z-index: 3;
 }
 
-.hiddenMenu {
+.hiddenMenuView {
     display: none;
 }
 
-.visibleMenu {
-    display: inline;
-}
-
-.menuOverlay {
+.menuViewOverlay {
     background-color: black;
     opacity: 0.7;
 }
 
-.menuContent {
+.menuViewContent {
     position: absolute;
     height: 80%;
     width: 60%;
@@ -359,7 +355,6 @@ body {
     background-color: white;
     z-index: 3;
 }
-
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
