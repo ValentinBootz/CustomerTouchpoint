@@ -5,19 +5,15 @@ class CustomerPage extends React.Component {
 
         this.handleNext = this.handleNext.bind(this)
         this.handlePrev = this.handlePrev.bind(this)
+        this.openCustomerMenu = this.openCustomerMenu.bind(this)
 
         this.state = {
-            view: 1
+            view: 0,
+            menu: 'hidden'
         }
 
         this.max = 35
     }
-
-    // componentDidMount() {
-    //     do {
-    //         this.handleNext()
-    //     } while(this.state.view != 0) 
-    // }
 
     handleNext() {
         if (this.state.view == this.max) {
@@ -43,6 +39,12 @@ class CustomerPage extends React.Component {
         }
     }
 
+    openCustomerMenu() {
+        this.setState({
+            menu: 'visible'
+        })
+    }
+
     render() {
 
         return (
@@ -56,10 +58,17 @@ class CustomerPage extends React.Component {
                     <div className='menuContainer'>
                         <button className='menuButton' />
                         <div className='dropdownContent'>
-                            <button className='customerButton' />
-                            <button className='serviceButton' />
-                            <button className='dealerButton' />
+                            <button className='customerButton' onClick={this.openCustomerMenu} />
+                            <button className='serviceButton' onClick={this.openServiceMenu} />
+                            <button className='dealerButton' onClick={this.openDealerMenu} />
                         </div>
+                    </div>
+                    <div className={this.state.menu + 'Menu'}>
+                        <div className='menuOverlay'/>
+                        <div className='menuContent'>
+
+                        </div>
+
                     </div>
                 </div>
             </div>

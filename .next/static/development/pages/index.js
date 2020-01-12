@@ -8658,7 +8658,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fvalentinbootz%2FDocuments%2FMaster%2FDeloitte%20Project%20Study%2Ftouchpoint-next%2Fpages%2Findex.js ***!
   \********************************************************************************************************************************************************************************/
@@ -8681,5 +8681,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

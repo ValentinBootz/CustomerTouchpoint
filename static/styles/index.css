@@ -15,7 +15,7 @@ body {
 }
 
 .landingBackground {
-    background-image: url('/static/images/background.png');
+    background-image: url('/static/images/landing/background.png');
     background-size: cover;
     z-index: 1;
 }
@@ -306,11 +306,11 @@ body {
 }
 
 .rotateButtonNext {
-    background-image: url('/static/images/next.svg');
+    background-image: url('/static/images/navigate/next.svg');
 }
 
 .rotateButtonPrev {
-    background-image: url('/static/images/prev.svg');
+    background-image: url('/static/images/navigate/prev.svg');
 }
 
 .rotateButtonNext:hover, .rotateButtonPrev:hover {
@@ -318,9 +318,45 @@ body {
 }
 
 .rotateButtonNext:hover {
-    background-image: url('/static/images/next_hover.svg');
+    background-image: url('/static/images/navigate/next_hover.svg');
 }
 
 .rotateButtonPrev:hover {
-    background-image: url('/static/images/prev_hover.svg');
+    background-image: url('/static/images/navigate/prev_hover.svg');
 }
+
+.hiddenMenu, .visibleMenu, .menuOverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    z-index: 3;
+}
+
+.hiddenMenu {
+    display: none;
+}
+
+.visibleMenu {
+    display: inline;
+}
+
+.menuOverlay {
+    background-color: black;
+    opacity: 0.7;
+}
+
+.menuContent {
+    position: absolute;
+    height: 80%;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: white;
+    z-index: 3;
+}
+

@@ -2173,17 +2173,14 @@ function (_React$Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CustomerPage).call(this));
     _this.handleNext = _this.handleNext.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.handlePrev = _this.handlePrev.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.openCustomerMenu = _this.openCustomerMenu.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.state = {
-      view: 1
+      view: 0,
+      menu: 'hidden'
     };
     _this.max = 35;
     return _this;
-  } // componentDidMount() {
-  //     do {
-  //         this.handleNext()
-  //     } while(this.state.view != 0) 
-  // }
-
+  }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CustomerPage, [{
     key: "handleNext",
@@ -2212,34 +2209,41 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "openCustomerMenu",
+    value: function openCustomerMenu() {
+      this.setState({
+        menu: 'visible'
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return __jsx("div", {
         className: "customerContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 51
         },
         __self: this
       }, __jsx("div", {
         className: 'customerBackground' + this.state.view,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 52
         },
         __self: this
       }), __jsx("div", {
         className: "customerContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 53
         },
         __self: this
       }, __jsx("div", {
         className: "buttonContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 54
         },
         __self: this
       }, __jsx("button", {
@@ -2247,7 +2251,7 @@ function (_React$Component) {
         onClick: this.handlePrev,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 55
         },
         __self: this
       }), __jsx("button", {
@@ -2255,52 +2259,76 @@ function (_React$Component) {
         onClick: this.handleNext,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 56
         },
         __self: this
       })), __jsx("div", {
         className: "menuContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 58
         },
         __self: this
       }, __jsx("button", {
         className: "menuButton",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 59
         },
         __self: this
       }), __jsx("div", {
         className: "dropdownContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 60
         },
         __self: this
       }, __jsx("button", {
         className: "customerButton",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59
-        },
-        __self: this
-      }), __jsx("button", {
-        className: "serviceButton",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        },
-        __self: this
-      }), __jsx("button", {
-        className: "dealerButton",
+        onClick: this.openCustomerMenu,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 61
         },
         __self: this
-      })))));
+      }), __jsx("button", {
+        className: "serviceButton",
+        onClick: this.openServiceMenu,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }), __jsx("button", {
+        className: "dealerButton",
+        onClick: this.openDealerMenu,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }))), __jsx("div", {
+        className: this.state.menu + 'Menu',
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "menuOverlay",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }), __jsx("div", {
+        className: "menuContent",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      }))));
     }
   }]);
 
