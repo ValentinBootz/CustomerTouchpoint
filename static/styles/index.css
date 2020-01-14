@@ -59,6 +59,10 @@ body {
     position: relative;
 }
 
+.preload {
+    visibility: hidden;
+}
+
 .customerBackground0, .customerBackground1, .customerBackground2, .customerBackground3, .customerBackground4, .customerBackground5, .customerBackground6, .customerBackground7, .customerBackground8, .customerBackground9, .customerBackground10, .customerBackground11, .customerBackground12, .customerBackground13, .customerBackground14, .customerBackground15, .customerBackground16, .customerBackground17, .customerBackground18, .customerBackground19, .customerBackground20, .customerBackground21, .customerBackground22, .customerBackground23, .customerBackground24, .customerBackground25, .customerBackground26, .customerBackground27, .customerBackground28, .customerBackground29, .customerBackground30, .customerBackground31, .customerBackground32, .customerBackground33, .customerBackground34, .customerBackground35 {
     position: absolute;
     left: 0;

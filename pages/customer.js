@@ -60,8 +60,10 @@ class CustomerPage extends React.Component {
 
         return (
             <div className='customerContainer'>
-                {this.state == 0 ? <div className={'customerBackground' + this.max} /> : <div className={'customerBackground' + (this.state.view - 1)} />}
-                {this.state == this.max ? <div className={'customerBackground' + 0} /> : <div className={'customerBackground' + (this.state.view + 1)} />}
+                <div className='preload'>
+                    {this.state.view == 0 ? <div className={'customerBackground' + this.max} /> : <div className={'customerBackground' + (this.state.view - 1)} />}
+                    {this.state.view != this.max && <div className={'customerBackground' + (this.state.view + 1)} />}
+                </div>
                 <div className={'customerBackground' + this.state.view} />
                 <div className='customerContent'>
                     <div className='buttonContainer'>
@@ -78,7 +80,7 @@ class CustomerPage extends React.Component {
                     </div>
                     {this.state.showMenuView ? <div className='menuViewContainer'>
                         <div className='menuViewOverlay'>
-                            <button className='closeMenuButton'/>
+                            <button className='closeMenuButton' />
                         </div>
                         <button className='closeButton' onClick={this.closeMenuView} />
                         <div className='menuViewContent' >
