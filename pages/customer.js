@@ -60,6 +60,8 @@ class CustomerPage extends React.Component {
 
         return (
             <div className='customerContainer'>
+                {this.state == 0 ? <div className={'customerBackground' + this.max} /> : <div className={'customerBackground' + (this.state.view - 1)} />}
+                {this.state == this.max ? <div className={'customerBackground' + 0} /> : <div className={'customerBackground' + (this.state.view + 1)} />}
                 <div className={'customerBackground' + this.state.view} />
                 <div className='customerContent'>
                     <div className='buttonContainer'>
@@ -71,14 +73,16 @@ class CustomerPage extends React.Component {
                         <div className='dropdownContent'>
                             <button className='customerButton' onClick={this.openCustomerMenu} />
                             <button className='serviceButton' onClick={this.openServiceMenu} />
-                            <button className='dealerButton' onClick={this.openDealerMenu} />
+                            <button className='financeButton' onClick={this.openDealerMenu} />
                         </div>
                     </div>
                     {this.state.showMenuView ? <div className='menuViewContainer'>
-                        <div className='menuViewOverlay' />
+                        <div className='menuViewOverlay'>
+                            <button className='closeMenuButton'/>
+                        </div>
                         <button className='closeButton' onClick={this.closeMenuView} />
                         <div className='menuViewContent' >
-                            {this.state.showCustomerForm ? <CustomerForm/> : null}
+                            {this.state.showCustomerForm ? <CustomerForm /> : null}
                         </div>
                     </div > : null}
                 </div>
