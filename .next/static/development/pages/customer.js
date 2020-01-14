@@ -1,8 +1,8 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/customer.js"],{
 
-/***/ "./components/CustomerForm.js":
+/***/ "./components/CustomerView.js":
 /*!************************************!*\
-  !*** ./components/CustomerForm.js ***!
+  !*** ./components/CustomerView.js ***!
   \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -21,22 +21,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/components/CustomerForm.js";
+var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/components/CustomerView.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
-var MenuView =
+var CustomerView =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(MenuView, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(CustomerView, _React$Component);
 
-  function MenuView() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, MenuView);
+  function CustomerView() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CustomerView);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(MenuView).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CustomerView).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(MenuView, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CustomerView, [{
     key: "render",
     value: function render() {
       return __jsx("form", {
@@ -45,20 +45,126 @@ function (_React$Component) {
           lineNumber: 5
         },
         __self: this
-      }, __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 6
-        },
-        __self: this
-      }, "Customer Form"));
+      });
     }
   }]);
 
-  return MenuView;
+  return CustomerView;
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (MenuView);
+/* harmony default export */ __webpack_exports__["default"] = (CustomerView);
+
+/***/ }),
+
+/***/ "./components/FinanceView.js":
+/*!***********************************!*\
+  !*** ./components/FinanceView.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/components/FinanceView.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+var FinanceView =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(FinanceView, _React$Component);
+
+  function FinanceView() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, FinanceView);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(FinanceView).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(FinanceView, [{
+    key: "render",
+    value: function render() {
+      return __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5
+        },
+        __self: this
+      });
+    }
+  }]);
+
+  return FinanceView;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (FinanceView);
+
+/***/ }),
+
+/***/ "./components/ServiceView.js":
+/*!***********************************!*\
+  !*** ./components/ServiceView.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/components/ServiceView.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+var ServiceView =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(ServiceView, _React$Component);
+
+  function ServiceView() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ServiceView);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ServiceView).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ServiceView, [{
+    key: "render",
+    value: function render() {
+      return __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5
+        },
+        __self: this
+      });
+    }
+  }]);
+
+  return ServiceView;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ServiceView);
 
 /***/ }),
 
@@ -2212,7 +2318,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_CustomerForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/CustomerForm */ "./components/CustomerForm.js");
+/* harmony import */ var _components_CustomerView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/CustomerView */ "./components/CustomerView.js");
+/* harmony import */ var _components_ServiceView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/ServiceView */ "./components/ServiceView.js");
+/* harmony import */ var _components_FinanceView__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/FinanceView */ "./components/FinanceView.js");
 
 
 
@@ -2222,6 +2330,8 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/valentinbootz/Documents/Master/Deloitte Project Study/touchpoint-next/pages/customer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+
 
 
 var CustomerPage =
@@ -2237,11 +2347,15 @@ function (_React$Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CustomerPage).call(this));
     _this.handleNext = _this.handleNext.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.handlePrev = _this.handlePrev.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    _this.openCustomerMenu = _this.openCustomerMenu.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.openCustomerView = _this.openCustomerView.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.openServiceView = _this.openServiceView.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.openFinanceView = _this.openFinanceView.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.closeView = _this.closeView.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.state = {
       view: 0,
-      showMenuView: false,
-      showCustomerForm: false
+      showCustomerView: false,
+      showServiceView: false,
+      showFinanceView: false
     };
     _this.max = 35;
     return _this;
@@ -2274,19 +2388,33 @@ function (_React$Component) {
       }
     }
   }, {
-    key: "openCustomerMenu",
-    value: function openCustomerMenu() {
+    key: "openCustomerView",
+    value: function openCustomerView() {
       this.setState({
-        showMenuView: true,
-        showCustomerForm: true
+        showCustomerView: true
       });
     }
   }, {
-    key: "closeMenuView",
-    value: function closeMenuView() {
+    key: "openServiceView",
+    value: function openServiceView() {
       this.setState({
-        showMenuView: false,
-        showCustomerForm: false
+        showServiceView: true
+      });
+    }
+  }, {
+    key: "openFinanceView",
+    value: function openFinanceView() {
+      this.setState({
+        showFinanceView: true
+      });
+    }
+  }, {
+    key: "closeView",
+    value: function closeView() {
+      this.setState({
+        showCustomerView: false,
+        showServiceView: false,
+        showFinanceView: false
       });
     }
   }, {
@@ -2296,56 +2424,56 @@ function (_React$Component) {
         className: "customerContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 80
         },
         __self: this
       }, __jsx("div", {
         className: "preload",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 81
         },
         __self: this
       }, this.state.view == 0 ? __jsx("div", {
         className: 'customerBackground' + this.max,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 82
         },
         __self: this
       }) : __jsx("div", {
         className: 'customerBackground' + (this.state.view - 1),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 82
         },
         __self: this
       }), this.state.view != this.max && __jsx("div", {
         className: 'customerBackground' + (this.state.view + 1),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 83
         },
         __self: this
       })), __jsx("div", {
         className: 'customerBackground' + this.state.view,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 85
         },
         __self: this
       }), __jsx("div", {
         className: "customerContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 86
         },
         __self: this
       }, __jsx("div", {
         className: "buttonContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 87
         },
         __self: this
       }, __jsx("button", {
@@ -2353,7 +2481,7 @@ function (_React$Component) {
         onClick: this.handlePrev,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 88
         },
         __self: this
       }), __jsx("button", {
@@ -2361,97 +2489,123 @@ function (_React$Component) {
         onClick: this.handleNext,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 89
         },
         __self: this
       })), __jsx("div", {
         className: "menuContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 91
         },
         __self: this
       }, __jsx("button", {
         className: "menuButton",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 92
         },
         __self: this
       }), __jsx("div", {
         className: "dropdownContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 93
         },
         __self: this
       }, __jsx("button", {
         className: "customerButton",
-        onClick: this.openCustomerMenu,
+        onClick: this.openCustomerView,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 94
         },
         __self: this
       }), __jsx("button", {
         className: "serviceButton",
-        onClick: this.openServiceMenu,
+        onClick: this.openServiceView,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 95
         },
         __self: this
       }), __jsx("button", {
         className: "financeButton",
-        onClick: this.openDealerMenu,
+        onClick: this.openFinanceView,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 96
         },
         __self: this
-      }))), this.state.showMenuView ? __jsx("div", {
+      }))), this.state.showCustomerView || this.state.showServiceView || this.state.showFinanceView ? __jsx("div", {
         className: "menuViewContainer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 99
         },
         __self: this
       }, __jsx("div", {
         className: "menuViewOverlay",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
-        },
-        __self: this
-      }, __jsx("button", {
-        className: "closeMenuButton",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        },
-        __self: this
-      })), __jsx("button", {
-        className: "closeButton",
-        onClick: this.closeMenuView,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 100
         },
         __self: this
       }), __jsx("div", {
         className: "menuViewContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 101
         },
         __self: this
-      }, this.state.showCustomerForm ? __jsx(_components_CustomerForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, __jsx("button", {
+        className: "closeButton",
+        onClick: this.closeView,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 102
         },
         __self: this
-      }) : null)) : null));
+      }), this.state.showCustomerView ? __jsx("div", {
+        className: "formContainer",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }, __jsx(_components_CustomerView__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        },
+        __self: this
+      })) : null, this.state.showServiceView ? __jsx("div", {
+        className: "formContainer",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }, __jsx(_components_ServiceView__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      })) : null, this.state.showFinanceView ? __jsx("div", {
+        className: "formContainer",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, __jsx(_components_FinanceView__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      })) : null)) : null));
     }
   }]);
 

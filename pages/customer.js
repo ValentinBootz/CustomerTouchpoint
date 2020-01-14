@@ -1,4 +1,6 @@
-import CustomerForm from '../components/CustomerForm'
+import CustomerView from '../components/CustomerView'
+import ServiceView from '../components/ServiceView'
+import FinanceView from '../components/FinanceView'
 
 class CustomerPage extends React.Component {
 
@@ -7,12 +9,16 @@ class CustomerPage extends React.Component {
 
         this.handleNext = this.handleNext.bind(this)
         this.handlePrev = this.handlePrev.bind(this)
-        this.openCustomerMenu = this.openCustomerMenu.bind(this)
+        this.openCustomerView = this.openCustomerView.bind(this)
+        this.openServiceView = this.openServiceView.bind(this)
+        this.openFinanceView = this.openFinanceView.bind(this)
+        this.closeView = this.closeView.bind(this)
 
         this.state = {
             view: 0,
-            showMenuView: false,
-            showCustomerForm: false,
+            showCustomerView: false,
+            showServiceView: false,
+            showFinanceView: false
         }
 
         this.max = 35
@@ -42,17 +48,29 @@ class CustomerPage extends React.Component {
         }
     }
 
-    openCustomerMenu() {
+    openCustomerView() {
         this.setState({
-            showMenuView: true,
-            showCustomerForm: true
+            showCustomerView: true
         })
     }
 
-    closeMenuView() {
+    openServiceView() {
         this.setState({
-            showMenuView: false,
-            showCustomerForm: false
+            showServiceView: true
+        })
+    }
+
+    openFinanceView() {
+        this.setState({
+            showFinanceView: true
+        })
+    }
+    
+    closeView() {
+        this.setState({
+            showCustomerView: false,
+            showServiceView: false,
+            showFinanceView: false
         })
     }
 
@@ -73,18 +91,24 @@ class CustomerPage extends React.Component {
                     <div className='menuContainer'>
                         <button className='menuButton' />
                         <div className='dropdownContent'>
-                            <button className='customerButton' onClick={this.openCustomerMenu} />
-                            <button className='serviceButton' onClick={this.openServiceMenu} />
-                            <button className='financeButton' onClick={this.openDealerMenu} />
+                            <button className='customerButton' onClick={this.openCustomerView} />
+                            <button className='serviceButton' onClick={this.openServiceView} />
+                            <button className='financeButton' onClick={this.openFinanceView} />
                         </div>
                     </div>
-                    {this.state.showMenuView ? <div className='menuViewContainer'>
-                        <div className='menuViewOverlay'>
-                            <button className='closeMenuButton' />
-                        </div>
-                        <button className='closeButton' onClick={this.closeMenuView} />
+                    {this.state.showCustomerView || this.state.showServiceView || this.state.showFinanceView ? <div className='menuViewContainer'>
+                        <div className='menuViewOverlay' />
                         <div className='menuViewContent' >
-                            {this.state.showCustomerForm ? <CustomerForm /> : null}
+                            <button className='closeButton' onClick={this.closeView} />
+                            {this.state.showCustomerView ? <div className='formContainer'>
+                                <CustomerView />
+                            </div> : null}
+                            {this.state.showServiceView ? <div className='formContainer'>
+                                <ServiceView />
+                            </div> : null}
+                            {this.state.showFinanceView ? <div className='formContainer'>
+                                <FinanceView />
+                            </div> : null}
                         </div>
                     </div > : null}
                 </div>

@@ -317,6 +317,23 @@ body {
     transition-duration: 0.4s;
 }
 
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/static/images/form/close.svg');
+    background-size: 80%;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin: 20px;
+    transition-duration: 0.4s;
+}
+
 .rotateButtonNext {
     background-image: url('/static/images/navigate/next.svg');
 }
