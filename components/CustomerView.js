@@ -3,6 +3,7 @@ class CustomerView extends React.Component {
 
         return (
             <form>
+                <p> Customer View</p>
             </form>
         );
     }
