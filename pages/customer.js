@@ -1,11 +1,12 @@
+import fetch from 'isomorphic-unfetch';
 import CustomerView from '../components/CustomerView'
 import ServiceView from '../components/ServiceView'
 import FinanceView from '../components/FinanceView'
 
 class CustomerPage extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.handleNext = this.handleNext.bind(this)
         this.handlePrev = this.handlePrev.bind(this)
@@ -18,11 +19,17 @@ class CustomerPage extends React.Component {
             view: 0,
             showCustomerView: false,
             showServiceView: false,
-            showFinanceView: false
+            showFinanceView: false,
         }
 
         this.max = 35
     }
+
+    // static async getInitialProps() {
+    //     const res = await fetch(`http://localhost:8080/api/customer`);
+    //     const customer = await res.json();
+    //     return { customer };
+    // }
 
     handleNext() {
         if (this.state.view == this.max) {
