@@ -329,9 +329,7 @@ body {
     border: none;
     width: 50px;
     height: 50px;
-    border-radius: 4px;
     margin: 20px;
-    transition-duration: 0.4s;
 }
 
 .rotateButtonNext {
@@ -375,8 +373,9 @@ body {
 
 .menuViewContent {
     position: absolute;
+    max-width: 600px;
     height: 80%;
-    width: 60%;
+    width: 70%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -385,5 +384,89 @@ body {
     z-index: 3;
 }
 
+.formContainer {
+    margin-top: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: calc(100% - 60px);
+}
+
+.profileForm {
+    max-height: calc(100% - 80px);
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+text {
+    font-family: Verdana;
+}
+
+.field, input, .label, .header, .title {
+    display: block;
+}
+
+.header {
+    font-size: x-large;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: medium;
+    margin-bottom: 30px;
+}
+
+.label {
+    font-size: small;
+    margin-bottom: 5px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 4px;
+    font-size: smaller;
+    font-family: Verdana;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.menuViewButton {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-image: url('/static/images/form/buttonIcon.svg');
+    background-size: auto;
+    text-align: left;
+    text-indent: 20px;
+    font-size: small;
+    border: none;
+    height: 30px;
+    outline: none;
+    -webkit-appearance: none;
+    margin-bottom: 20px;
+}
 
 /*# sourceMappingURL=styles.chunk.css.map*/

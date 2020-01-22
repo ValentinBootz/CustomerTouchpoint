@@ -65,7 +65,7 @@ class CustomerPage extends React.Component {
             showFinanceView: true
         })
     }
-    
+
     closeView() {
         this.setState({
             showCustomerView: false,
@@ -101,12 +101,15 @@ class CustomerPage extends React.Component {
                         <div className='menuViewContent' >
                             <button className='closeButton' onClick={this.closeView} />
                             {this.state.showCustomerView ? <div className='formContainer'>
+                                <text className='header'> Mein Profil. </text>
                                 <CustomerView />
                             </div> : null}
                             {this.state.showServiceView ? <div className='formContainer'>
+                                <text className='header'> Meine Services. </text>
                                 <ServiceView />
                             </div> : null}
                             {this.state.showFinanceView ? <div className='formContainer'>
+                                <text className='header'> Meine Finanzen. </text>
                                 <FinanceView />
                             </div> : null}
                         </div>
