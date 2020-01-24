@@ -2,59 +2,58 @@ import React, { Component } from 'react';
 
 class CustomerView extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             formControls: {
                 firstName: {
-                    value: ''
+                    value: this.props.customer.firstName
                 },
                 lastName: {
-                    value: ''
+                    value: this.props.customer.lastName
                 },
                 birthday: {
-                    value: ''
+                    value: this.props.customer.birthday
                 },
                 address: {
-                    value: ''
+                    value: this.props.customer.address
                 },
                 area_code: {
-                    value: ''
+                    value: this.props.customer.area_code
                 },
                 community: {
-                    value: ''
+                    value: this.props.customer.community
                 },
                 email: {
-                    value: ''
+                    value: this.props.customer.email
                 },
                 phone: {
-                    value: ''
+                    value: this.props.customer.phone
                 },
                 contact_method: {
-                    value: ''
+                    value: this.props.customer.contact_method
                 },
                 brand: {
-                    value: ''
+                    value: this.props.customer.brand
                 },
                 model: {
-                    value: ''
+                    value: this.props.customer.model
                 },
                 licence: {
-                    value: ''
+                    value: this.props.customer.licence
                 },
                 vin: {
-                    value: ''
+                    value: this.props.customer.vin
                 },
                 registration: {
-                    value: ''
+                    value: this.props.customer.registration
                 },
                 kilometers: {
-                    value: ''
+                    value: this.props.customer.kilometers
                 }
             }
         }
-
     }
 
     submitHandler = event => {
