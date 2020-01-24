@@ -26,7 +26,8 @@ class CustomerPage extends React.Component {
     }
 
     static getInitialProps({ req }) {
-        const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
+        //const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
+        const baseUrl = req.secure ? `https://${req.get('Host')}` : `http://${req.get('Host')}`;
         return { baseUrl }
     }
 
