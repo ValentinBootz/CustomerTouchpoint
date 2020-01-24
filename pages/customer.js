@@ -27,6 +27,7 @@ class CustomerPage extends React.Component {
 
     static async getInitialProps({ req }) {
         const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
+        console.log(baseUrl)
         const res = await fetch(`${baseUrl}/api/customer`)
         const vin = "WBAVB71070VA36703"
         const customer = (await res.json()).find(element => element.vin == vin)
