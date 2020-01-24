@@ -400,21 +400,22 @@ body {
     -webkit-appearance: none;
     width: 7px;
   }
-  ::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 0 1px rgba(255, 255, 255, .5);
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-  }
+}
 
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, .6);
-  }
+}
 
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, .3);
-  }
+}
 
 text {
     font-family: Verdana;
@@ -459,12 +460,13 @@ input {
     background-position: left;
     background-image: url('/static/images/form/buttonIcon.svg');
     background-size: auto;
+    color: black;
     text-align: left;
     text-indent: 20px;
     font-size: small;
     border: none;
     height: 30px;
-    outline: none;
+    text-decoration: none;
     -webkit-appearance: none;
     margin-bottom: 20px;
 }

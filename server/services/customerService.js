@@ -12,8 +12,8 @@ function get(req, res) {
 }
 
 function create(req, res) {
+    
     const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers } = req.body
-
     const customer = new Customer({ firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers })
 
     customer.save().then(() => {

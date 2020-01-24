@@ -25,13 +25,15 @@ class CustomerPage extends React.Component {
         this.max = 35
     }
 
-    static async getInitialProps({ req }) {
+    static getInitialProps({ req }) {
         const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-        console.log(baseUrl)
-        const res = await fetch(`${baseUrl}/api/customer`)
+        return { baseUrl }
+    }
+
+    async componentDidMount() {
+        const res = await fetch(`${this.props.baseUrl}/api/customer`)
         const vin = "WBAVB71070VA36703"
-        const customer = (await res.json()).find(element => element.vin == vin)
-        return {customer}
+        this.customer = (await res.json()).find(element => element.vin == vin)
     }
 
     handleNext() {
@@ -112,7 +114,7 @@ class CustomerPage extends React.Component {
                             <button className='closeButton' onClick={this.closeView} />
                             {this.state.showCustomerView ? <div className='formContainer'>
                                 <text className='header'> Mein Profil. </text>
-                                <CustomerView customer={this.props.customer} />
+                                <CustomerView customer={this.customer} baseUrl={this.props.baseUrl} />
                             </div> : null}
                             {this.state.showServiceView ? <div className='formContainer'>
                                 <text className='header'> Meine Services. </text>

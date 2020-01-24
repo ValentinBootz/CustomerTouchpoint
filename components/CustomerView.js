@@ -56,9 +56,35 @@ class CustomerView extends Component {
         }
     }
 
-    submitHandler = event => {
-        event.preventDefault()
-        alert('form submitted')
+    handleSubmit = async event => {
+
+        const data = JSON.stringify({
+            "firstName": this.state.formControls.firstName.value,
+            "lastName": this.state.formControls.lastName.value,
+            "birthday": this.state.formControls.birthday.value,
+            "address": this.state.formControls.address.value,
+            "area_code": this.state.formControls.area_code.value,
+            "community": this.state.formControls.community.value,
+            "email": this.state.formControls.email.value,
+            "phone": this.state.formControls.phone.value,
+            "contact_method": this.state.formControls.contact_method.value,
+            "brand": this.state.formControls.brand.value,
+            "model": this.state.formControls.model.value,
+            "licence": this.state.formControls.licence.value,
+            "vin": this.state.formControls.vin.value,
+            "registration": this.state.formControls.registration.value,
+            "kilometers": this.state.formControls.kilometers.value
+        });
+
+        await fetch(`${this.props.baseUrl}/api/customer`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: data,
+            redirect: 'follow'
+        }).then(response => response.text())
+            .then(result => console.log(result))
+            .then(window.location.reload())
+            .catch(error => console.log('error', error));
     }
 
     changeHandler = event => {
@@ -196,7 +222,9 @@ class CustomerView extends Component {
                         onChange={this.changeHandler}
                     />
                 </div>
-                <button className='menuViewButton' onClick={this.submitHandler}> Update </button>
+                <button className='menuViewButton' onClick={this.handleSubmit}>
+                    <text> Update </text>
+                </button>
             </form>
         );
     }

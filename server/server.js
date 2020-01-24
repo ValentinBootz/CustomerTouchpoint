@@ -1,11 +1,10 @@
 const express = require('express')
 const next = require('next')
-const mongoose = require('mongoose')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-
 const port = process.env.PORT || 8080
 
 app.prepare()
@@ -14,6 +13,7 @@ app.prepare()
 
         server.use(bodyParser.json())
         server.use(bodyParser.urlencoded({ extended: true }))
+        server.use(cors())
 
         server.use('/api', require('./routes/index'))
 
