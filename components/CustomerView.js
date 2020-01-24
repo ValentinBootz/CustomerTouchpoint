@@ -76,6 +76,8 @@ class CustomerView extends Component {
             "kilometers": this.state.formControls.kilometers.value
         });
 
+        console.log(this.props.baseUrl)
+
         await fetch(`${this.props.baseUrl}/api/customer`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
