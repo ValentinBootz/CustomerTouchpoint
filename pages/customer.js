@@ -26,14 +26,13 @@ class CustomerPage extends React.Component {
     }
 
     static getInitialProps({ req }) {
-        //const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-        const baseUrl = req ? `${req.get('Host')}` : '';
+        const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
         return { baseUrl }
     }
 
     async componentDidMount() {
         console.log(this.props.baseUrl)
-        const res = await fetch(`https://${this.props.baseUrl}/api/customer`)
+        const res = await fetch(`${this.props.baseUrl}/api/customer`)
         const vin = "WBAVB71070VA36703"
         this.customer = (await res.json()).find(element => element.vin == vin)
     }

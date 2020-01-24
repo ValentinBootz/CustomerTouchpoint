@@ -78,7 +78,7 @@ class CustomerView extends Component {
 
         console.log(this.props.baseUrl)
 
-        await fetch(`https://${this.props.baseUrl}/api/customer`, {
+        await fetch(`${this.props.baseUrl}/api/customer`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: data,
