@@ -26,7 +26,7 @@ class CustomerPage extends React.Component {
     }
 
     static getInitialProps({ req }) {
-        const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
+        const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : `${window.location.protocol}//${window.location.host}`;
         return { baseUrl }
     }
 
@@ -36,7 +36,6 @@ class CustomerPage extends React.Component {
             .then(res => res.json())
             .then(json => json.find(element => element.vin == vin))
             .catch(error => console.log('error', error))
-        //this.customer = (await res.json()).find(element => element.vin == vin)
     }
 
     handleNext() {
