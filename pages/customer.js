@@ -31,11 +31,8 @@ class CustomerPage extends React.Component {
     }
 
     async componentDidMount() {
-        const res = await fetch(`${this.props.baseUrl}/api/customer`)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
         const vin = "WBAVB71070VA36703"
+        const res = await fetch(`${this.props.baseUrl}/api/customer`).catch(error => console.log('error', error))
         this.customer = (await res.json()).find(element => element.vin == vin)
     }
 
