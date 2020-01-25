@@ -80,7 +80,8 @@ class CustomerView extends Component {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: data,
-            redirect: 'follow'
+            redirect: 'follow',
+           // mode: 'cors'
         }).then(response => response.text())
             .then(result => console.log(result))
             .then(window.location.reload())
