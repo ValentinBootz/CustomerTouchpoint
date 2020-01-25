@@ -76,7 +76,7 @@ class CustomerView extends Component {
             "kilometers": this.state.formControls.kilometers.value
         });
 
-        await fetch(`${this.props.baseUrl}/api/customer`, {
+        await fetch('https://customertouchpoint.azurewebsites.net/api/customer', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: data,

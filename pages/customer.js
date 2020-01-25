@@ -25,14 +25,9 @@ class CustomerPage extends React.Component {
         this.max = 35
     }
 
-    static getInitialProps({ req }) {
-        const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : `${window.location.protocol}//${window.location.host}`;
-        return { baseUrl }
-    }
-
     async componentDidMount() {
         const vin = "WBAVB71070VA36703"
-        this.customer = await fetch(`${this.props.baseUrl}/api/customer`)
+        this.customer = await fetch('https://customertouchpoint.azurewebsites.net/api/customer')
             .then(res => res.json())
             .then(json => json.find(element => element.vin == vin))
             .catch(error => console.log('error', error))
@@ -116,7 +111,7 @@ class CustomerPage extends React.Component {
                             <button className='closeButton' onClick={this.closeView} />
                             {this.state.showCustomerView ? <div className='formContainer'>
                                 <text className='header'> Mein Profil. </text>
-                                <CustomerView customer={this.customer} baseUrl={this.props.baseUrl} />
+                                <CustomerView customer={this.customer} />
                             </div> : null}
                             {this.state.showServiceView ? <div className='formContainer'>
                                 <text className='header'> Meine Services. </text>
