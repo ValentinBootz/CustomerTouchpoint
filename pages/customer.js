@@ -23,11 +23,13 @@ class CustomerPage extends React.Component {
         }
 
         this.max = 35
+        this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
+        //this.baseUrl = 'http://localhost:8080'
     }
 
     async componentDidMount() {
         const vin = "WBAVB71070VA36703"
-        this.customer = await fetch('https://customertouchpoint.azurewebsites.net/api/customer')
+        this.customer = await fetch(`${this.baseUrl}/api/customer`)
             .then(res => res.json())
             .then(json => json.find(element => element.vin == vin))
             .catch(error => console.log('error', error))
@@ -111,7 +113,7 @@ class CustomerPage extends React.Component {
                             <button className='closeButton' onClick={this.closeView} />
                             {this.state.showCustomerView ? <div className='formContainer'>
                                 <text className='header'> Mein Profil. </text>
-                                <CustomerView customer={this.customer} />
+                                <CustomerView customer={this.customer} baseUrl={this.baseUrl} />
                             </div> : null}
                             {this.state.showServiceView ? <div className='formContainer'>
                                 <text className='header'> Meine Services. </text>
