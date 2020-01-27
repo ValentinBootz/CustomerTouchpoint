@@ -75,26 +75,6 @@ class ServiceView extends Component {
                 <button className='menuViewButton' onClick={this.digitalLink}>
                     <text> BMW Connected Drive </text>
                 </button>
-
-
-                <text className='title'> Digitale Services </text>
-                <div className='serviceListContainer'>
-                    {digital}
-                </div>
-                <button className='menuViewButton' onClick={this.digitalLink}>
-                    <text> BMW Connected Drive </text>
-                </button>
-
-                <text className='title'> Digitale Services </text>
-                <div className='serviceListContainer'>
-                    {digital}
-                </div>
-                <button className='menuViewButton' onClick={this.digitalLink}>
-                    <text> BMW Connected Drive </text>
-                </button>
-
-
-
             </div>
         );
     }
