@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 class LandingPage extends React.Component {
+
     render() {
         return (
             <div className="landingContainer">

@@ -82,7 +82,6 @@ class CustomerView extends Component {
             body: data,
             redirect: 'follow',
         }).then(response => response.text())
-            .then(result => console.log(result))
             .then(window.location.reload())
             .catch(error => console.log('error', error));
     }

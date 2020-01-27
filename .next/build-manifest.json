@@ -21,6 +21,10 @@
     "/customer": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+    ],
+    "/dealer": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

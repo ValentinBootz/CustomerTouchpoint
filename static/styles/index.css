@@ -489,12 +489,59 @@ input {
     font-size: small;
 }
 
-.servicedate {
-    float: left;
-    margin-right: 5%;
+.servicedate_small, .servicename_small, .serviceprice_small {
+    font-size: x-small;
 }
 
-.serviceprice, .servicestatus {
+.servicestatus, .serviceprice, .serviceprice_small {
     margin-right: 10%;
-    float: right;
+    text-align: right;
+}
+
+.disclaimer {
+    font-size: xx-small;
+}
+
+.dealerContainer {
+    margin: 20px
+}
+
+.raw {
+    font-size: smaller;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.infoContainer {
+    margin-top: 10px;
+    width: 400px;
+}
+
+.name, .value {
+    font-size: x-small;
+}
+
+.nameContainer {
+    width: 120px;
+    display: inline-block;
+}
+
+.tableContainer {
+    margin-top: 10px;
+    width: 400px;
+}
+
+.dateContainer {
+    width: 20%;
+    display: inline-block;
+}
+
+.serviceContainer {
+    width: 40%;
+    display: inline-block;
+}
+
+.digitalContainer {
+    width: 60%;
+    display: inline-block;
 }
