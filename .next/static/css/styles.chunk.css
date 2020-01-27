@@ -421,7 +421,7 @@ text {
     font-family: Verdana;
 }
 
-.field, input, .label, .header, .title {
+.field, input, .label, .header, .title, .section {
     display: block;
 }
 
@@ -430,9 +430,14 @@ text {
     margin-bottom: 40px;
 }
 
-.title {
+.section {
     font-size: medium;
     margin-bottom: 30px;
+}
+
+.title {
+    font-size: medium;
+    margin-bottom: 20px;
 }
 
 .label {
@@ -469,6 +474,29 @@ input {
     text-decoration: none;
     -webkit-appearance: none;
     margin-bottom: 20px;
+}
+
+.serviceViewContainer {
+    max-height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+.serviceListContainer {
+    margin-bottom: 10px;
+}
+
+.servicedate, .servicename, .serviceprice, .servicestatus {
+    font-size: small;
+}
+
+.servicedate {
+    float: left;
+    margin-right: 5%;
+}
+
+.serviceprice, .servicestatus {
+    margin-right: 10%;
+    float: right;
 }
 
 /*# sourceMappingURL=styles.chunk.css.map*/

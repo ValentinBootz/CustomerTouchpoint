@@ -106,7 +106,7 @@ class CustomerView extends Component {
     render() {
         return (
             <form className='profileForm'>
-                <text className='title'> Persönliche Daten </text>
+                <text className='section'> Persönliche Daten </text>
                 <div className='field'>
                     <text className='label'> Vorname </text>
                     <input type='text'
@@ -173,7 +173,7 @@ class CustomerView extends Component {
                     />
                 </div>
                 <br></br>
-                <text className='title'> Fahrzeugdaten </text>
+                <text className='section'> Fahrzeugdaten </text>
                 <div className='field'>
                     <text className='label'> Marke </text>
                     <input type='text'

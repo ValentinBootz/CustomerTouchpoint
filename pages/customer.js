@@ -23,8 +23,8 @@ class CustomerPage extends React.Component {
         }
 
         this.max = 35
-        this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
-        //this.baseUrl = 'http://localhost:8080'
+        //this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
+        this.baseUrl = 'http://localhost:8080'
     }
 
     async componentDidMount() {
@@ -117,7 +117,7 @@ class CustomerPage extends React.Component {
                             </div> : null}
                             {this.state.showServiceView ? <div className='formContainer'>
                                 <text className='header'> Meine Services. </text>
-                                <ServiceView />
+                                <ServiceView customer={this.customer} baseUrl={this.baseUrl} />
                             </div> : null}
                             {this.state.showFinanceView ? <div className='formContainer'>
                                 <text className='header'> Meine Finanzen. </text>
