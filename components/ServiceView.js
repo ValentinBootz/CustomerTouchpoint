@@ -4,6 +4,8 @@ class ServiceView extends Component {
     constructor(props) {
         super(props)
 
+        this.dealerLink = this.dealerLink.bind(this)
+
         this.state = {
             history: [{ "date": "01.06.2019", "name": "Autokauf", "price": "40.000€" }, { "date": "01.01.2020", "name": "Ölservice", "price": "500€" }],
             upcoming: [{ "date": "06.2020", "name": "Bremsbeläge", "price": "800€" }, { "date": "01.2020", "name": "Mikrofilter", "price": "300€" }],
