@@ -5,6 +5,8 @@ class CustomerView extends Component {
     constructor(props) {
         super(props)
 
+        this.handleSubmit = this.handleSubmit.bind(this)
+
         this.state = {
             formControls: {
                 firstName: {
@@ -82,7 +84,7 @@ class CustomerView extends Component {
             body: data,
             redirect: 'follow',
         }).then(response => response.text())
-            .then(window.location.reload())
+            .then(this.props.reload())
             .catch(error => console.log('error', error));
     }
 
@@ -109,6 +111,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Vorname </text>
                     <input type='text'
+                        className='styledInput'
                         name='firstName'
                         value={this.state.formControls.firstName.value}
                         onChange={this.changeHandler}
@@ -117,6 +120,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Nachname </text>
                     <input type='text'
+                        className='styledInput'
                         name='lastName'
                         value={this.state.formControls.lastName.value}
                         onChange={this.changeHandler}
@@ -125,6 +129,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Geburtsdatum </text>
                     <input type='text'
+                        className='styledInput'
                         name='birthday'
                         placeholder='dd.mm.yyyy'
                         value={this.state.formControls.birthday.value}
@@ -134,6 +139,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Adresse </text>
                     <input type='text'
+                        className='styledInput'
                         name='address'
                         value={this.state.formControls.address.value}
                         onChange={this.changeHandler}
@@ -142,6 +148,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Postleitzahl </text>
                     <input type='text'
+                        className='styledInput'
                         name='area_code'
                         value={this.state.formControls.area_code.value}
                         onChange={this.changeHandler}
@@ -150,6 +157,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Ort </text>
                     <input type='text'
+                        className='styledInput'
                         name='community'
                         value={this.state.formControls.community.value}
                         onChange={this.changeHandler}
@@ -158,6 +166,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> E-Mail </text>
                     <input type='text'
+                        className='styledInput'
                         name='email'
                         value={this.state.formControls.email.value}
                         onChange={this.changeHandler}
@@ -166,6 +175,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Telefon </text>
                     <input type='text'
+                        className='styledInput'
                         name='phone'
                         value={this.state.formControls.phone.value}
                         onChange={this.changeHandler}
@@ -176,6 +186,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Marke </text>
                     <input type='text'
+                        className='styledInput'
                         name='brand'
                         value={this.state.formControls.brand.value}
                         onChange={this.changeHandler}
@@ -184,6 +195,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Modell </text>
                     <input type='text'
+                        className='styledInput'
                         name='model'
                         value={this.state.formControls.model.value}
                         onChange={this.changeHandler}
@@ -192,6 +204,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Kennzeichen </text>
                     <input type='text'
+                        className='styledInput'
                         name='licence'
                         value={this.state.formControls.licence.value}
                         onChange={this.changeHandler}
@@ -200,6 +213,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> VIN </text>
                     <input type='text'
+                        className='styledInput'
                         name='vin'
                         value={this.state.formControls.vin.value}
                         onChange={this.changeHandler}
@@ -208,6 +222,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Erstzulassung </text>
                     <input type='text'
+                        className='styledInput'
                         name='registration'
                         value={this.state.formControls.registration.value}
                         onChange={this.changeHandler}
@@ -216,6 +231,7 @@ class CustomerView extends Component {
                 <div className='field'>
                     <text className='label'> Kilometerstand </text>
                     <input type='text'
+                        className='styledInput'
                         name='kilometers'
                         value={this.state.formControls.kilometers.value}
                         onChange={this.changeHandler}

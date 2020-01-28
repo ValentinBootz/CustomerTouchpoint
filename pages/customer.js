@@ -8,6 +8,7 @@ class CustomerPage extends React.Component {
     constructor(props) {
         super(props)
 
+        this.reload = this.reload.bind(this)
         this.handleNext = this.handleNext.bind(this)
         this.handlePrev = this.handlePrev.bind(this)
         this.openCustomerView = this.openCustomerView.bind(this)
@@ -20,11 +21,16 @@ class CustomerPage extends React.Component {
             showCustomerView: false,
             showServiceView: false,
             showFinanceView: false,
+            reload: false
         }
 
         this.max = 35
-        //this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
-        this.baseUrl = 'http://localhost:8080'
+        this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
+        //this.baseUrl = 'http://localhost:8080'
+    }
+
+    reload() {
+        this.setState({reload: true})
     }
 
     async componentDidMount() {
@@ -32,6 +38,10 @@ class CustomerPage extends React.Component {
         this.customer = await fetch(`${this.baseUrl}/api/customer`)
             .then(res => res.json())
             .then(json => json.find(element => element.vin == vin))
+            .catch(error => console.log('error', error))
+
+        this.history = await fetch(`${this.baseUrl}/api/service`)
+            .then(res => res.json())
             .catch(error => console.log('error', error))
     }
 
@@ -113,11 +123,11 @@ class CustomerPage extends React.Component {
                             <button className='closeButton' onClick={this.closeView} />
                             {this.state.showCustomerView ? <div className='formContainer'>
                                 <text className='header'> Mein Profil. </text>
-                                <CustomerView customer={this.customer} baseUrl={this.baseUrl} />
+                                <CustomerView customer={this.customer} baseUrl={this.baseUrl} reload={this.reload} />
                             </div> : null}
                             {this.state.showServiceView ? <div className='formContainer'>
                                 <text className='header'> Meine Services. </text>
-                                <ServiceView customer={this.customer} baseUrl={this.baseUrl} />
+                                <ServiceView customer={this.customer} history={this.history} baseUrl={this.baseUrl} />
                             </div> : null}
                             {this.state.showFinanceView ? <div className='formContainer'>
                                 <text className='header'> Meine Finanzen. </text>

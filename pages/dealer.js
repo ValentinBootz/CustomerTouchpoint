@@ -7,10 +7,16 @@ class DealerPage extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { value: 'select' };
+        this.reload = this.reload.bind(this)
 
-        //this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
-        this.baseUrl = 'http://localhost:8080'
+        this.state = { value: 'select', reload: false }
+
+        this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
+        //this.baseUrl = 'http://localhost:8080'
+    }
+
+    reload() {
+        this.setState({reload: true})
     }
 
     async componentDidMount() {
@@ -19,6 +25,10 @@ class DealerPage extends React.Component {
             .then(res => res.json())
             .then(json => json.find(element => element.vin == vin))
             .catch(error => console.log('error', error))
+
+        this.history = await fetch(`${this.baseUrl}/api/service`)
+            .then(res => res.json())
+            .catch(error => console.log('error', error))
     }
 
     onChange(e) {
@@ -26,7 +36,6 @@ class DealerPage extends React.Component {
             value: e.target.value
         })
     }
-
 
     render() {
 
@@ -40,7 +49,7 @@ class DealerPage extends React.Component {
                     </select>
                 </div>
                 {(this.state.value == 'WBAVB71070VA36703') && <CustomerInfo customer={this.customer} baseUrl={this.baseUrl} />}
-                {(this.state.value == 'WBAVB71070VA36703') && <ServiceTable customer={this.customer} baseUrl={this.baseUrl} />}
+                {(this.state.value == 'WBAVB71070VA36703') && <ServiceTable customer={this.customer} history={this.history} baseUrl={this.baseUrl} reload={this.reload}/>}
             </div>
         );
     }

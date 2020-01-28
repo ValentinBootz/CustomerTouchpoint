@@ -8,7 +8,7 @@ class ServiceView extends Component {
 
         this.state = {
             history: [{ "date": "01.06.2019", "name": "Autokauf", "price": "40.000€" }, { "date": "01.01.2020", "name": "Ölservice", "price": "500€" }],
-            upcoming: [{ "date": "06.2020", "name": "Bremsbeläge", "price": "800€" }, { "date": "01.2020", "name": "Mikrofilter", "price": "300€" }],
+            upcoming: [{ "date": "06.2020", "name": "Bremsbeläge", "price": "800€" }, { "date": "09.2020", "name": "Mikrofilter", "price": "300€" }],
             digital: [{ "name": "Remote Service", "status": "aktiv" }, { "name": "BMW Connected+", "status": "inaktiv" }, { "name": "RTTI", "status": "aktiv" }]
         }
     }
@@ -25,7 +25,7 @@ class ServiceView extends Component {
 
     render() {
 
-        const history = this.state.history.map(service => {
+        const history = this.props.history.map(service => {
             return (
                 <div className='service'>
                     <div className='dateContainer'>

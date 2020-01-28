@@ -421,7 +421,7 @@ text {
     font-family: Verdana;
 }
 
-.field, input, .label, .header, .title, .section {
+.field, .styledInput, .label, .header, .title, .section {
     display: block;
 }
 
@@ -449,7 +449,7 @@ text {
     margin-bottom: 20px;
 }
 
-input {
+.styledInput {
     width: 90%;
     padding: 4px;
     font-size: smaller;
@@ -534,6 +534,7 @@ input {
 .dateContainer {
     width: 20%;
     display: inline-block;
+
 }
 
 .serviceContainer {
@@ -544,6 +545,19 @@ input {
 .digitalContainer {
     width: 60%;
     display: inline-block;
+}
+
+.dateInput, .nameInput, .priceInput {
+    font-size: x-small;
+    font-family: Verdana;
+}
+
+.dateInput, .nameInput {
+    width: calc(100% - 10px);
+}
+
+.priceInput {
+    width: 20%;
 }
 
 
