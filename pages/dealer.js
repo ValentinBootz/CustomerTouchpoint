@@ -43,7 +43,7 @@ class DealerPage extends React.Component {
             <div className='dealerContainer'>
                 <div className='selectForm'>
                     <text className='raw'> VIN </text>
-                    <select value={this.state.value} onChange={this.onChange.bind(this)} className='selectfield'>
+                    <select value={this.state.value} onChange={this.onChange.bind(this)} className='selectField'>
                         <option value='select'> - </option>
                         <option value='WBAVB71070VA36703'> WBAVB71070VA36703 </option>
                     </select>

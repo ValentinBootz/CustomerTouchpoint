@@ -51,8 +51,8 @@ class CustomerView extends Component {
                 registration: {
                     value: this.props.customer.registration
                 },
-                kilometers: {
-                    value: this.props.customer.kilometers
+                kilometers_monthly: {
+                    value: this.props.customer.kilometers_monthly
                 }
             }
         }
@@ -75,7 +75,7 @@ class CustomerView extends Component {
             "licence": this.state.formControls.licence.value,
             "vin": this.state.formControls.vin.value,
             "registration": this.state.formControls.registration.value,
-            "kilometers": this.state.formControls.kilometers.value
+            "kilometers_monthly": this.state.formControls.kilometers_monthly.value
         });
 
         await fetch(`${this.props.baseUrl}/api/customer`, {
@@ -229,11 +229,11 @@ class CustomerView extends Component {
                     />
                 </div>
                 <div className='field'>
-                    <text className='label'> Kilometerstand </text>
+                    <text className='label'> Kilometer pro Monat </text>
                     <input type='text'
                         className='styledInput'
-                        name='kilometers'
-                        value={this.state.formControls.kilometers.value}
+                        name='kilometers_monthly'
+                        value={this.state.formControls.kilometers_monthly.value}
                         onChange={this.changeHandler}
                     />
                 </div>

@@ -13,8 +13,8 @@ function get(req, res) {
 
 function create(req, res) {
     
-    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers } = req.body
-    const customer = new Customer({ firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers })
+    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers_monthly } = req.body
+    const customer = new Customer({ firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers_monthly })
 
     customer.save().then(() => {
         res.json(customer)
@@ -24,7 +24,7 @@ function create(req, res) {
 }
 
 function update(req, res) {
-    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers } = req.body
+    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, registration, kilometers_monthly } = req.body
     Customer.findOne({}).then(customer => {
         customer.firstName = firstName;
         customer.lastName = lastName;
@@ -40,7 +40,7 @@ function update(req, res) {
         customer.licence = licence;
         customer.vin = vin;
         customer.registration = registration;
-        customer.kilometers = kilometers;
+        customer.kilometers_monthly = kilometers_monthly;
         customer.save().then(res.json(customer))
     }).catch(err => {
         res.status(500).send(err)

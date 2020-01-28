@@ -7,8 +7,6 @@ class ServiceView extends Component {
         this.dealerLink = this.dealerLink.bind(this)
 
         this.state = {
-            history: [{ "date": "01.06.2019", "name": "Autokauf", "price": "40.000€" }, { "date": "01.01.2020", "name": "Ölservice", "price": "500€" }],
-            upcoming: [{ "date": "06.2020", "name": "Bremsbeläge", "price": "800€" }, { "date": "09.2020", "name": "Mikrofilter", "price": "300€" }],
             digital: [{ "name": "Remote Service", "status": "aktiv" }, { "name": "BMW Connected+", "status": "inaktiv" }, { "name": "RTTI", "status": "aktiv" }]
         }
     }
@@ -34,12 +32,14 @@ class ServiceView extends Component {
                     <div className='serviceContainer'>
                         <text className='servicename'> {service.name} </text>
                     </div>
-                    <text className='serviceprice'> {service.price} </text>
+                    <div className='priceContainer'>
+                        <text className='serviceprice'> {service.price} </text>
+                    </div>
                 </div>
             )
         })
 
-        const upcoming = this.state.upcoming.map(service => {
+        const upcoming = this.props.upcoming.map(service => {
             return (
                 <div className='service'>
                     <div className='dateContainer'>
@@ -48,7 +48,9 @@ class ServiceView extends Component {
                     <div className='serviceContainer'>
                         <text className='servicename'> {service.name} </text>
                     </div>
-                    <text className='serviceprice'> {service.price} </text>
+                    <div className='priceContainer'>
+                        <text className='serviceprice'> {service.price} </text>
+                    </div>
                 </div>
             )
         })
@@ -59,7 +61,9 @@ class ServiceView extends Component {
                     <div className='digitalContainer'>
                         <text className='servicename'> {service.name} </text>
                     </div>
-                    <text className='servicestatus'> {service.status} </text>
+                    <div className='statusContainer'>
+                        <text className='servicestatus'> {service.status} </text>
+                    </div>
                 </div>
             )
         })

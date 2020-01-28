@@ -84,7 +84,7 @@ class CustomerInfo extends Component {
                     <div className='nameContainer'>
                         <text className='name'> Kilometerstand: </text>
                     </div>
-                    <text className='value'> {this.props.customer.kilometers} </text>
+                    <text className='value'> {(parseInt(this.props.customer.kilometers_monthly.replace('.', ''))*12).toString() + ' km'} </text>
                 </div>
             </div>
         );

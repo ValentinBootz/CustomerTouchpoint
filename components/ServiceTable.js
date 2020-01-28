@@ -14,7 +14,7 @@ class ServiceTable extends Component {
                     value: ''
                 },
                 name: {
-                    value: ''
+                    value: 'select'
                 },
                 price: {
                     value: ''
@@ -74,12 +74,25 @@ class ServiceTable extends Component {
                             />
                         </div>
                         <div className='serviceContainer'>
-                            <input type='text'
-                                className='nameInput'
-                                name='name'
-                                value={this.state.formControls.name.value}
-                                onChange={this.changeHandler}
-                            />
+                            <select value={this.state.formControls.name.value} onChange={this.changeHandler} className='selectField' name='name'>
+                                <option value='select'> - </option>
+                                <option value='Luftfilter'> Luftfilter </option>
+                                <option value='Batterie'> Batterie </option>
+                                <option value='Bremsscheiben vorne'> Bremsscheiben vorne </option>
+                                <option value='Bremsscheiben hinten'> Bremsscheiben hinten </option>
+                                <option value='Bremsflüssigkeit'> Bremsflüssigkeit </option>
+                                <option value='Bremsbeläge vorne'> Bremsbeläge vorne </option>
+                                <option value='Bremsbeläge hinten'> Bremsbeläge hinten </option>
+                                <option value='Ölservice'> Ölservice </option>
+                                <option value='Erste-Hilfe-Koffer'> Erste-Hilfe-Koffer </option>
+                                <option value='Kraftstofffilter Diesel'> Kraftstofffilter Diesel </option>
+                                <option value='HU/AU'> HU/AU </option>
+                                <option value='Mikrofilter'> Mikrofilter </option>
+                                <option value='Ölfilter'> Ölfilter </option>
+                                <option value='Zündkerzen'> Zündkerzen </option>
+                                <option value='Reifen'> Reifen </option>
+                                <option value='Fahrzeuguntersuchung'> Fahrzeuguntersuchung </option>
+                            </select>
                         </div>
                         <input type='text'
                             name='price'
