@@ -538,18 +538,18 @@ text {
 }
 
 .serviceContainer {
-    width: 35%;
+    width: 40%;
     display: inline-block;
 }
 
 .priceContainer, .statusContainer {
-    width: 15%;
+    width: 10%;
     text-align: right;
     display: inline-block;
 }
 
 .digitalContainer {
-    width: 55%;
+    width: 60%;
     display: inline-block;
 }
 
