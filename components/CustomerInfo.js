@@ -10,11 +10,11 @@ class CustomerInfo extends Component {
     }
 
     getConsumtion() {
-        typeof this.props.customer.consumption === 'undefined' ? '' : (parseFloat(this.props.customer.consumption.replace(',', '.'))).toString() + ' l/100km'
+        return this.props.customer.consumption == '' ? '' : (parseFloat(this.props.customer.consumption.replace(',', '.'))).toString() + ' l/100km'
     }
 
     getKilometers() {
-        typeof this.props.customer.kilometers === 'undefined' ? '' : (parseInt(this.props.customer.kilometers_monthly.replace('.', '')) * 12).toString() + ' km'
+        return this.props.customer.kilometers_monthly == '' ? '' : (parseInt(this.props.customer.kilometers_monthly.replace('.', '')) * 12).toString() + ' km'
     }
 
     render() {
