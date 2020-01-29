@@ -11,8 +11,8 @@ class DealerPage extends React.Component {
 
         this.state = { value: 'select', reload: false }
 
-        //this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
-        this.baseUrl = 'http://localhost:8080'
+        this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
+        //this.baseUrl = 'http://localhost:8080'
     }
 
     reload() {
