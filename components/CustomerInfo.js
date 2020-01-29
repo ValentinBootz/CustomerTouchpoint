@@ -73,7 +73,12 @@ class CustomerInfo extends Component {
                     </div>
                     <text className='value'> {this.props.customer.model} </text>
                 </div>
-
+                <div className='info'>
+                    <div className='nameContainer'>
+                        <text className='name'> Kaufpreis: </text>
+                    </div>
+                    <text className='value'> {this.props.customer.price} </text>
+                </div>
                 <div className='info'>
                     <div className='nameContainer'>
                         <text className='name'> Erstzulassung: </text>

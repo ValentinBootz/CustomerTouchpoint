@@ -15,6 +15,7 @@ const customer = new Schema({
     model: { type: String },
     licence: { type: String },
     vin: { type: String },
+    price: { type: String },
     registration: { type: String },
     kilometers_monthly: { type: String },
 })

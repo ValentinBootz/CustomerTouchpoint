@@ -48,6 +48,9 @@ class CustomerView extends Component {
                 vin: {
                     value: this.props.customer.vin
                 },
+                price: {
+                    value: this.props.customer.price
+                },
                 registration: {
                     value: this.props.customer.registration
                 },
@@ -74,6 +77,7 @@ class CustomerView extends Component {
             "model": this.state.formControls.model.value,
             "licence": this.state.formControls.licence.value,
             "vin": this.state.formControls.vin.value,
+            "price": this.state.formControls.price.value,
             "registration": this.state.formControls.registration.value,
             "kilometers_monthly": this.state.formControls.kilometers_monthly.value
         });
@@ -216,6 +220,15 @@ class CustomerView extends Component {
                         className='styledInput'
                         name='vin'
                         value={this.state.formControls.vin.value}
+                        onChange={this.changeHandler}
+                    />
+                </div>
+                <div className='field'>
+                    <text className='label'> Kaufpreis </text>
+                    <input type='text'
+                        className='styledInput'
+                        name='price'
+                        value={this.state.formControls.price.value}
                         onChange={this.changeHandler}
                     />
                 </div>

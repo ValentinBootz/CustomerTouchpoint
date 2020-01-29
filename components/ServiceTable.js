@@ -85,7 +85,7 @@ class ServiceTable extends Component {
                                 <option value='Bremsbeläge hinten'> Bremsbeläge hinten </option>
                                 <option value='Ölservice'> Ölservice </option>
                                 <option value='Erste-Hilfe-Koffer'> Erste-Hilfe-Koffer </option>
-                                <option value='Kraftstofffilter Diesel'> Kraftstofffilter Diesel </option>
+                                <option value='Kraftstofffilter'> Kraftstofffilter </option>
                                 <option value='HU/AU'> HU/AU </option>
                                 <option value='Mikrofilter'> Mikrofilter </option>
                                 <option value='Ölfilter'> Ölfilter </option>
