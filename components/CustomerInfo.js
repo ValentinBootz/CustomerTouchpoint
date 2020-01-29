@@ -4,9 +4,23 @@ class CustomerInfo extends Component {
 
     constructor(props) {
         super(props)
+
+        this.getConsumtion = this.getConsumtion.bind(this)
+        this.getKilometers = this.getKilometers.bind(this)
+    }
+
+    getConsumtion() {
+        typeof this.props.customer.consumption == undefined ? '' : (parseFloat(this.props.customer.consumption.replace(',', '.'))).toString() + ' l/100km'
+    }
+
+    getKilometers() {
+        typeof this.props.customer.kilometers == undefined ? '' : (parseInt(this.props.customer.kilometers_monthly.replace('.', '')) * 12).toString() + ' km'
     }
 
     render() {
+
+        const consumption = this.getConsumtion()
+        const kilometers = this.getKilometers()
 
         return (
             <div className='infoContainer'>
@@ -89,7 +103,13 @@ class CustomerInfo extends Component {
                     <div className='nameContainer'>
                         <text className='name'> Kilometerstand: </text>
                     </div>
-                    <text className='value'> {(parseInt(this.props.customer.kilometers_monthly.replace('.', ''))*12).toString() + ' km'} </text>
+                    <text className='value'> {kilometers} </text>
+                </div>
+                <div className='info'>
+                    <div className='nameContainer'>
+                        <text className='name'> Verbrauch: </text>
+                    </div>
+                    <text className='value'> {consumption} </text>
                 </div>
             </div>
         );

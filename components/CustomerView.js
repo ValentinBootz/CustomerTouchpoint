@@ -57,6 +57,9 @@ class CustomerView extends Component {
                 kilometers_monthly: {
                     value: this.props.customer.kilometers_monthly
                 },
+                consumption: {
+                    value: this.props.customer.consumption
+                },
                 insurance_monthly: {
                     value: this.props.customer.insurance_monthly
                 }
@@ -83,7 +86,8 @@ class CustomerView extends Component {
             "price": this.state.formControls.price.value,
             "registration": this.state.formControls.registration.value,
             "kilometers_monthly": this.state.formControls.kilometers_monthly.value,
-            "insurance_monthly": this.state.formControls.insurance_monthly
+            "consumption": this.state.formControls.consumption.value,
+            "insurance_monthly": this.state.formControls.insurance_monthly.value
         });
 
         await fetch(`${this.props.baseUrl}/api/customer`, {
@@ -258,6 +262,16 @@ class CustomerView extends Component {
                         name='kilometers_monthly'
                         placeholder='z.B. 800 km'
                         value={this.state.formControls.kilometers_monthly.value}
+                        onChange={this.changeHandler}
+                    />
+                </div>
+                <div className='field'>
+                    <text className='label'> Verbrauch pro 100km </text>
+                    <input type='text'
+                        className='styledInput'
+                        name='consumption'
+                        placeholder='z.B. 10l'
+                        value={this.state.formControls.consumption.value}
                         onChange={this.changeHandler}
                     />
                 </div>
