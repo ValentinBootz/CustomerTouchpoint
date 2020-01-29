@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class FinanceView extends Component {
     constructor(props) {
         super(props)
-        
+
         this.parseDate = this.parseDate.bind(this)
         this.calculateMaintenance = this.calculateMaintenance.bind(this)
 
@@ -16,28 +16,29 @@ class FinanceView extends Component {
 
     calculateDepreciation() {
         var price = parseInt(this.props.customer.price.replace('.', '')) || 30000
-        return price*0.1
+        return price * 0.1
     }
 
     calculateFuelCost() {
         const consumption_100km = parseFloat(this.props.customer.consumption.replace(',', '.')) || 10
         const avg_price_per_liter = 1.45
-        const kilometers_monthly = parseInt(this.props.customer.kilometers_monthly.replace('.','')) || 800
-        return kilometers_monthly*12/100*consumption_100km*avg_price_per_liter
+        const kilometers_monthly = parseInt(this.props.customer.kilometers_monthly.replace('.', '')) || 800
+        return kilometers_monthly * 12 / 100 * consumption_100km * avg_price_per_liter
     }
 
     calculateInsurance() {
-        const insurance_monthly =  parseInt(this.props.customer.insurance_monthly.replace('.','')) || 200
-        return insurance_monthly*12
+        const insurance_monthly = parseInt(this.props.customer.insurance_monthly.replace('.', '')) || 200
+        return insurance_monthly * 12
     }
 
     calculateMaintenance() {
         var maintenance_cost = 0
         const history = this.props.history
-        for(var i = 0; i < history.length; i++) {
+        for (var i = 0; i < history.length; i++) {
             var service = history[i];
-            if(this.parseDate(service['date']).getFullYear() == '2019') {
-                maintenance_cost += parseInt(service['price'].replace('.',''))
+            if (service['name'] == '') { break; }
+            if (this.parseDate(service['date']).getFullYear() == '2019') {
+                maintenance_cost += parseInt(service['price'].replace('.', ''))
             }
         }
         return maintenance_cost
