@@ -23,7 +23,7 @@ class FinanceView extends Component {
         const consumption_100km = parseFloat(this.props.customer.consumption.replace(',', '.')) || 10
         const avg_price_per_liter = 1.45
         const kilometers_monthly = parseInt(this.props.customer.kilometers_monthly.replace('.', '')) || 800
-        return kilometers_monthly * 12 / 100 * consumption_100km * avg_price_per_liter
+        return parseInt(kilometers_monthly * 12 / 100 * consumption_100km * avg_price_per_liter)
     }
 
     calculateInsurance() {
