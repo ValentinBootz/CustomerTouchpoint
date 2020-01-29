@@ -25,7 +25,7 @@ class CustomerView extends Component {
                     value: this.props.customer.area_code
                 },
                 community: {
-                    value: this.props.customer.community
+                    value: this.props.customer.community,
                 },
                 email: {
                     value: this.props.customer.email
@@ -56,6 +56,9 @@ class CustomerView extends Component {
                 },
                 kilometers_monthly: {
                     value: this.props.customer.kilometers_monthly
+                },
+                insurance_monthly: {
+                    value: this.props.customer.insurance_monthly
                 }
             }
         }
@@ -79,7 +82,8 @@ class CustomerView extends Component {
             "vin": this.state.formControls.vin.value,
             "price": this.state.formControls.price.value,
             "registration": this.state.formControls.registration.value,
-            "kilometers_monthly": this.state.formControls.kilometers_monthly.value
+            "kilometers_monthly": this.state.formControls.kilometers_monthly.value,
+            "insurance_monthly": this.state.formControls.insurance_monthly
         });
 
         await fetch(`${this.props.baseUrl}/api/customer`, {
@@ -192,6 +196,7 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='brand'
+                        disabled={true}
                         value={this.state.formControls.brand.value}
                         onChange={this.changeHandler}
                     />
@@ -201,6 +206,7 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='model'
+                        disabled={true}
                         value={this.state.formControls.model.value}
                         onChange={this.changeHandler}
                     />
@@ -210,6 +216,7 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='licence'
+                        disabled={true}
                         value={this.state.formControls.licence.value}
                         onChange={this.changeHandler}
                     />
@@ -219,6 +226,7 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='vin'
+                        disabled={true}
                         value={this.state.formControls.vin.value}
                         onChange={this.changeHandler}
                     />
@@ -228,6 +236,7 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='price'
+                        placeholder='z.B. 30.000€'
                         value={this.state.formControls.price.value}
                         onChange={this.changeHandler}
                     />
@@ -237,6 +246,7 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='registration'
+                        placeholder='z.B. 01.01.2020'
                         value={this.state.formControls.registration.value}
                         onChange={this.changeHandler}
                     />
@@ -246,11 +256,22 @@ class CustomerView extends Component {
                     <input type='text'
                         className='styledInput'
                         name='kilometers_monthly'
+                        placeholder='z.B. 800 km'
                         value={this.state.formControls.kilometers_monthly.value}
                         onChange={this.changeHandler}
                     />
                 </div>
-                <button className='menuViewButton' onClick={this.handleSubmit}>
+                <div className='field'>
+                    <text className='label'> Versicherungsbeiträge monatlich </text>
+                    <input type='text'
+                        className='styledInput'
+                        name='insurance_monthly'
+                        placeholder='z.B. 200€'
+                        value={this.state.formControls.insurance_monthly.value}
+                        onChange={this.changeHandler}
+                    />
+                </div>
+                <button className='menuViewButton' onClick={this.handleSubmit} >
                     <text> Update </text>
                 </button>
             </form>

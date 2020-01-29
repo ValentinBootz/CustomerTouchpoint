@@ -12,7 +12,8 @@ class ServiceView extends Component {
     }
 
     dealerLink() {
-        const url = `https://www.bmw.de/de/fastlane/bmw-partner.html#/dlo/DE/de/BMW_BMWM?type=location&term=${this.props.customer.community},%20Deutschland`
+        const location = this.props.customer.community == '' ? 'München' : this.props.customer.community
+        const url = `https://www.bmw.de/de/fastlane/bmw-partner.html#/dlo/DE/de/BMW_BMWM?type=location&term=${location},%20Deutschland`
         window.open(url, '_blank')
     }
 

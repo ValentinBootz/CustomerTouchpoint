@@ -8,7 +8,9 @@ class CustomerPage extends React.Component {
     constructor(props) {
         super(props)
 
+        this.findLatest = this.findLatest.bind(this)
         this.compare_predictions = this.compare_predictions.bind(this)
+        this.compare_predictions_decreasing = this.compare_predictions_decreasing.bind(this)
         this.parseDate = this.parseDate.bind(this)
         this.reload = this.reload.bind(this)
         this.handleNext = this.handleNext.bind(this)
@@ -27,13 +29,14 @@ class CustomerPage extends React.Component {
         }
 
         this.max = 35
-        this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
-        //this.baseUrl = 'http://localhost:8080'
+        //this.baseUrl = 'https://customertouchpoint.azurewebsites.net'
+        this.baseUrl = 'http://localhost:8080'
     }
 
     reload() {
         this.setState({ reload: true })
     }
+
 
     async componentDidMount() {
         const vin = "WBAVB71070VA36703"
@@ -42,11 +45,17 @@ class CustomerPage extends React.Component {
             .then(json => json.find(element => element.vin == vin))
             .catch(error => console.log('error', error))
 
+        this.kilometers_monthly = parseInt(this.customer.kilometers_monthly.replace('.', '')) || 800
+
         this.history = await fetch(`${this.baseUrl}/api/service`)
             .then(res => res.json())
             .catch(error => console.log('error', error))
 
-
+        if (this.history.length == 0) {
+            this.history = [{ "date": "-", "name": "", "price": "" }]
+        } else {
+            this.history.sort(this.compare_predictions_decreasing)
+        }
 
         this.upcoming = [
             { "date": this.next_airfilter(), "name": "Luftfilter", "price": "70€" },
@@ -70,36 +79,48 @@ class CustomerPage extends React.Component {
         this.upcoming.sort(this.compare_predictions)
     }
 
+    findLatest(service) {
+        var latest = this.parseDate(this.customer.registration) || this.parseDate('01.01.2020')
+        for (var i = 0; i < this.history.length; i++)
+            if (this.history[i]['name'] == service)
+                latest = this.parseDate(this.history[i]['date']);
+        return latest
+    }
+
     compare_predictions(x, y) {
         return ((this.parseDate(x.date) == this.parseDate(y.date)) ? 0 : ((this.parseDate(x.date) > this.parseDate(y.date)) ? 1 : -1));
     }
 
+    compare_predictions_decreasing(x, y) {
+        return ((this.parseDate(x.date) == this.parseDate(y.date)) ? 0 : ((this.parseDate(x.date) < this.parseDate(y.date)) ? 1 : -1));
+    }
+
     next_airfilter() {
-        var next_airfilter = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(60000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_airfilter = this.findLatest('Luftfilter')
+        const period_mileage_constraint = Math.floor(60000 / this.kilometers_monthly)
         next_airfilter.setMonth(next_airfilter.getMonth() + Math.min(48, period_mileage_constraint))
 
         return this.parseString(next_airfilter)
     }
 
     next_battery() {
-        var next_battery = this.parseDate(this.customer.registration)
+        var next_battery = this.findLatest('Batterie')
         next_battery.setMonth(next_battery.getMonth() + 96)
 
         return this.parseString(next_battery)
     }
 
     next_brakediscs_front() {
-        var next_brakediscs_front = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(80000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_brakediscs_front = this.findLatest('Bremsscheiben vorne')
+        const period_mileage_constraint = Math.floor(80000 / this.kilometers_monthly)
         next_brakediscs_front.setMonth(next_brakediscs_front.getMonth() + period_mileage_constraint)
 
         return this.parseString(next_brakediscs_front)
     }
 
     next_brakediscs_rear() {
-        var next_brakediscs_rear = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(120000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_brakediscs_rear = this.findLatest('Bremsscheiben hinten')
+        const period_mileage_constraint = Math.floor(120000 / this.kilometers_monthly)
         next_brakediscs_rear.setMonth(next_brakediscs_rear.getMonth() + period_mileage_constraint)
 
         return this.parseString(next_brakediscs_rear)
@@ -107,46 +128,46 @@ class CustomerPage extends React.Component {
 
     //Todo: Implement first time 36 month
     next_brakefluid() {
-        var next_brakefluid = this.parseDate(this.customer.registration)
+        var next_brakefluid = this.findLatest('Bremsflüssigkeit')
         next_brakefluid.setMonth(next_brakefluid.getMonth() + 24)
 
         return this.parseString(next_brakefluid)
     }
 
     next_brakepads_front() {
-        var next_brakepads_front = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(40000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_brakepads_front = this.findLatest('Bremsbeläge')
+        const period_mileage_constraint = Math.floor(40000 / this.kilometers_monthly)
         next_brakepads_front.setMonth(next_brakepads_front.getMonth() + period_mileage_constraint)
 
         return this.parseString(next_brakepads_front)
     }
 
     next_brakepads_rear() {
-        var next_brakepads_rear = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(60000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_brakepads_rear = this.findLatest('Bremsbeläge')
+        const period_mileage_constraint = Math.floor(60000 / this.kilometers_monthly)
         next_brakepads_rear.setMonth(next_brakepads_rear.getMonth() + period_mileage_constraint)
 
         return this.parseString(next_brakepads_rear)
     }
 
     next_oilservice() {
-        var next_oilservice = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(30000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_oilservice = this.findLatest('Ölservice')
+        const period_mileage_constraint = Math.floor(30000 / this.kilometers_monthly)
         next_oilservice.setMonth(next_oilservice.getMonth() + Math.min(24, period_mileage_constraint))
 
         return this.parseString(next_oilservice)
     }
 
     next_firstaidkit() {
-        var next_firstaidkit = this.parseDate(this.customer.registration)
+        var next_firstaidkit = this.findLatest('Erste-Hilfe-Koffer')
         next_firstaidkit.setMonth(next_firstaidkit.getMonth() + 48)
 
         return this.parseString(next_firstaidkit)
     }
 
     next_fuelfilter() {
-        var next_fuelfilter = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(60000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_fuelfilter = this.findLatest('Kraftstofffilter')
+        const period_mileage_constraint = Math.floor(60000 / this.kilometers_monthly)
         next_fuelfilter.setMonth(next_fuelfilter.getMonth() + Math.min(48, period_mileage_constraint))
 
         return this.parseString(next_fuelfilter)
@@ -154,47 +175,47 @@ class CustomerPage extends React.Component {
 
     //Todo: Implement first time 36 month
     next_hu_au() {
-        var next_hu_au = this.parseDate(this.customer.registration)
+        var next_hu_au = this.findLatest('HU/AU')
         next_hu_au.setMonth(next_hu_au.getMonth() + 24)
 
         return this.parseString(next_hu_au)
     }
 
     next_microfilter() {
-        var next_microfilter = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(30000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_microfilter = this.findLatest('Mikrofilter')
+        const period_mileage_constraint = Math.floor(30000 / this.kilometers_monthly)
         next_microfilter.setMonth(next_microfilter.getMonth() + Math.min(24, period_mileage_constraint))
 
         return this.parseString(next_microfilter)
     }
 
     next_oilfilter() {
-        var next_oilfilter = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(30000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_oilfilter = this.findLatest('Ölfilter')
+        const period_mileage_constraint = Math.floor(30000 / this.kilometers_monthly)
         next_oilfilter.setMonth(next_oilfilter.getMonth() + Math.min(24, period_mileage_constraint))
 
         return this.parseString(next_oilfilter)
     }
 
     next_sparkplugs() {
-        var next_sparkplugs = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(60000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_sparkplugs = this.findLatest('Zündkerzen')
+        const period_mileage_constraint = Math.floor(60000 / this.kilometers_monthly)
         next_sparkplugs.setMonth(next_sparkplugs.getMonth() + Math.min(48, period_mileage_constraint))
 
         return this.parseString(next_sparkplugs)
     }
 
     next_tires() {
-        var next_tires = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(10000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_tires = this.findLatest('Reifen')
+        const period_mileage_constraint = Math.floor(10000 / this.kilometers_monthly)
         next_tires.setMonth(next_tires.getMonth() + Math.min(60, period_mileage_constraint))
 
         return this.parseString(next_tires)
     }
 
     next_vehiclecheck() {
-        var next_vehiclecheck = this.parseDate(this.customer.registration)
-        const period_mileage_constraint = Math.floor(60000 / this.customer.kilometers_monthly.replace('.', ''))
+        var next_vehiclecheck = this.findLatest('Fahrzeuguntersuchung')
+        const period_mileage_constraint = Math.floor(60000 / this.kilometers_monthly)
         next_vehiclecheck.setMonth(next_vehiclecheck.getMonth() + Math.min(48, period_mileage_constraint))
 
         return this.parseString(next_vehiclecheck)
@@ -208,7 +229,13 @@ class CustomerPage extends React.Component {
     parseDate(string) {
         var regex = /(\d{2}).(\d{2}).(\d{4})/
         var array = regex.exec(string);
-        return new Date(array[3], array[2] - 1, array[1])
+
+        try {
+            return new Date(array[3], array[2] - 1, array[1])
+        }
+        catch {
+            return undefined
+        }
     }
 
     handleNext() {
@@ -297,7 +324,7 @@ class CustomerPage extends React.Component {
                             </div> : null}
                             {this.state.showFinanceView ? <div className='formContainer'>
                                 <text className='header'> Meine Finanzen. </text>
-                                <FinanceView />
+                                <FinanceView customer={this.customer} history={this.history}/>
                             </div> : null}
                         </div>
                     </div > : null}

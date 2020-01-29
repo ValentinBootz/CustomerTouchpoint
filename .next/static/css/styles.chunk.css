@@ -421,7 +421,7 @@ text {
     font-family: Verdana;
 }
 
-.field, .styledInput, .label, .header, .title, .section {
+.field, .styledInput, .label, .header, .title, .section, .explanation, .subtitled {
     display: block;
 }
 
@@ -438,6 +438,15 @@ text {
 .title {
     font-size: medium;
     margin-bottom: 20px;
+}
+
+.subtitled {
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+.explanation {
+    font-size: x-small;
 }
 
 .label {
@@ -566,5 +575,59 @@ text {
     width: 20%;
 }
 
+.financeViewContainer {
+    max-height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+.explanationContainer {
+    hyphens: auto; 
+    text-align: justify;
+    line-height: 0.9em;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.costViewContainer {
+    width: 80%;
+    display: inline-block;
+}
+
+.elementContainer {
+    margin-bottom: 20px;
+}
+
+.totalcostlabel, .totalcost {
+    font-size: medium;
+}
+
+.costlabel, .cost {
+    font-size: smaller;
+    display: block;
+}
+
+.verticalline {
+    display: block;
+    height: 1px;
+    margin-bottom: 20px;
+    background-color: grey;
+}
+
+.typeContainer {
+    width: 70%;
+    display: inline-block;
+}
+
+.costContainer {
+    vertical-align: top;
+    width: 30%;
+    display: inline-block;
+    text-align: right;
+}
+
+.detail {
+    display: inline-block;
+    font-size: xx-small;
+}
 
 /*# sourceMappingURL=styles.chunk.css.map*/

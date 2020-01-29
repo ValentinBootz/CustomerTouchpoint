@@ -13,8 +13,8 @@ function get(req, res) {
 
 function create(req, res) {
     
-    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, price, registration, kilometers_monthly } = req.body
-    const customer = new Customer({ firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, price, registration, kilometers_monthly })
+    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, price, registration, kilometers_monthly, insurance_monthly } = req.body
+    const customer = new Customer({ firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, price, registration, kilometers_monthly, insurance_monthly })
 
     customer.save().then(() => {
         res.json(customer)
@@ -24,7 +24,7 @@ function create(req, res) {
 }
 
 function update(req, res) {
-    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, price, registration, kilometers_monthly } = req.body
+    const { firstName, lastName, birthday, address, area_code, community, email, phone, contact_method, brand, model, licence, vin, price, registration, kilometers_monthly, insurance_monthly } = req.body
     Customer.findOne({}).then(customer => {
         customer.firstName = firstName;
         customer.lastName = lastName;
@@ -42,6 +42,7 @@ function update(req, res) {
         customer.price = price;
         customer.registration = registration;
         customer.kilometers_monthly = kilometers_monthly;
+        customer.insurance_monthly = insurance_monthly;
         customer.save().then(res.json(customer))
     }).catch(err => {
         res.status(500).send(err)

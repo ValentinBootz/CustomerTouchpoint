@@ -18,6 +18,7 @@ const customer = new Schema({
     price: { type: String },
     registration: { type: String },
     kilometers_monthly: { type: String },
+    insurance_monthly: { type: String }
 })
 
 module.exports = mongoose.model('customer', customer)

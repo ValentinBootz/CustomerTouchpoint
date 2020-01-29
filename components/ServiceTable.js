@@ -11,15 +11,18 @@ class ServiceTable extends Component {
         this.state = {
             formControls: {
                 date: {
-                    value: ''
+                    value: '',
+                    valid: false
                 },
                 name: {
                     value: 'select'
                 },
                 price: {
-                    value: ''
+                    value: '',
+                    valid: false
                 }
-            }
+            },
+            showMessage: false
         }
     }
 
@@ -31,17 +34,30 @@ class ServiceTable extends Component {
             "price": this.state.formControls.price.value
         });
 
-        await fetch(`${this.props.baseUrl}/api/service`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: data,
-            redirect: 'follow',
-        }).then(response => response.text())
-            .then(this.props.reload())
-            .catch(error => console.log('error', error));
+        const date_regex = /^(0[1-9]|(1|2)[1-9]|3[0,1]).(0[1-9]|1[0-2]).20\d{2}/
+        const price_regex= /^([1-9][0-9]{0,2}.[0-9]{3}|[1-9][0-9]{0,2})€/
+        var date_valid = date_regex.test(this.state.formControls.date.value)
+        var price_valid = price_regex.test(this.state.formControls.price.value)
+        var service_valid = this.state.formControls.name.value != 'select'
+
+        if (price_valid && date_valid && service_valid) {
+            await fetch(`${this.props.baseUrl}/api/service`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: data,
+                redirect: 'follow',
+            }).then(response => response.text())
+                .then(this.props.reload())
+                .catch(error => console.log('error', error));
+        } else {
+            event.preventDefault()
+            this.setState({ showMessage: true })
+        }
     }
 
     changeHandler = event => {
+
+        this.setState({ showMessage: false })
 
         const name = event.target.name;
         const value = event.target.value;
@@ -54,7 +70,7 @@ class ServiceTable extends Component {
                     value
                 }
             }
-        });
+        })
     }
 
     render() {
@@ -69,6 +85,7 @@ class ServiceTable extends Component {
                             <input type='text'
                                 className='dateInput'
                                 name='date'
+                                placeholder='dd.mm.yyyy'
                                 value={this.state.formControls.date.value}
                                 onChange={this.changeHandler}
                             />
@@ -97,10 +114,12 @@ class ServiceTable extends Component {
                         <input type='text'
                             name='price'
                             className='priceInput'
+                            placeholder='€'
                             value={this.state.formControls.price.value}
                             onChange={this.changeHandler}
                         />
                         <button className='addButton' onClick={this.handleSubmit}> Hinzufügen </button>
+                        {this.state.showMessage && <text className='disclaimer'> Eingabe ungültig! </text>}
                     </form>
                 </div>
             </div>
