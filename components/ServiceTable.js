@@ -34,7 +34,7 @@ class ServiceTable extends Component {
             "price": this.state.formControls.price.value
         });
 
-        const date_regex = /^(0[1-9]|(1|2)[1-9]|3[0,1]).(0[1-9]|1[0-2]).20\d{2}/
+        const date_regex = /^(0[1-9]|[1|2][0-9]|3[0,1]).(0[1-9]|1[0-2]).(20\d{2})/
         const price_regex= /^([1-9][0-9]{0,2}.[0-9]{3}|[1-9][0-9]{0,2})€/
         var date_valid = date_regex.test(this.state.formControls.date.value)
         var price_valid = price_regex.test(this.state.formControls.price.value)
