@@ -1,7 +1,9 @@
-import fetch from 'isomorphic-unfetch';
+import isomorphic from 'isomorphic-unfetch';
 import CustomerView from '../components/CustomerView'
 import ServiceView from '../components/ServiceView'
 import FinanceView from '../components/FinanceView'
+
+var fetch = require('fetch-retry')(isomorphic)
 
 class CustomerPage extends React.Component {
 
@@ -207,7 +209,7 @@ class CustomerPage extends React.Component {
 
     next_tires() {
         var next_tires = this.findLatest('Reifen')
-        const period_mileage_constraint = Math.floor(10000 / this.kilometers_monthly)
+        const period_mileage_constraint = Math.floor(25000 / this.kilometers_monthly)
         next_tires.setMonth(next_tires.getMonth() + Math.min(60, period_mileage_constraint))
 
         return this.parseString(next_tires)
