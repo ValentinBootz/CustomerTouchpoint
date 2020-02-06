@@ -1,6 +1,8 @@
-import fetch from 'isomorphic-unfetch';
+import isomorphic from 'isomorphic-unfetch';
 import CustomerInfo from '../components/CustomerInfo';
 import ServiceTable from '../components/ServiceTable'
+
+var fetch = require('fetch-retry')(isomorphic)
 
 class DealerPage extends React.Component {
 

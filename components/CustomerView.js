@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import isomorphic from 'isomorphic-unfetch';
+
+var fetch = require('fetch-retry')(isomorphic)
 
 class CustomerView extends Component {
 

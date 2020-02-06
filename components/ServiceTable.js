@@ -1,5 +1,8 @@
 import ServiceList from '../components/ServiceList'
 import React, { Component } from 'react';
+import isomorphic from 'isomorphic-unfetch';
+
+var fetch = require('fetch-retry')(isomorphic)
 
 class ServiceTable extends Component {
 
