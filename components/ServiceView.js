@@ -71,12 +71,12 @@ class ServiceView extends Component {
 
         return (
             <div className='serviceViewContainer'>
-                <text className='title'> Termine </text>
+                <text className='title'> Service-Historie </text>
                 <div className='serviceListContainer'>
                     {history}
                 </div>
                 <br />
-                <text className='title'> Serviceplan </text>
+                <text className='title'> Service-Vorhersagen </text>
                 <div className='serviceListContainer'>
                     {upcoming}
                 </div>
