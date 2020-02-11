@@ -63,7 +63,7 @@ class FinanceView extends Component {
                 <text className='subtitled'> Total Cost of Ownership </text>
                 <div className='explanationContainer'>
                     <text className='explanation'>
-                        Dein Total Cost of Ownership beschreibt deine Gesamtkosten im Jahr 2020. Dabei werden Wertverlust sowie laufende Kosten individuell eingeschätzt. Unter Mein Profil kannst du deine Angaben aktualisieren um noch genauere Ergebnisse zu ermöglichen.
+                        Dein Total Cost of Ownership beschreibt deine Gesamtkosten im Jahr 2019. Dabei werden Wertverlust sowie laufende Kosten individuell eingeschätzt. Unter Mein Profil kannst du deine Angaben aktualisieren um noch genauere Ergebnisse zu ermöglichen.
                     </text>
                 </div>
                 <div className='costViewContainer'>
